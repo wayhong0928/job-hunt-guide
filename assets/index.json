@@ -1,0 +1,38 @@
+[
+ {
+  "slug": "getting-started",
+  "title": "求職起步總覽",
+  "desc": "整體規劃、心態調整、資源盤點、求職時程怎麼抓",
+  "section": "求職起步"
+ },
+ {
+  "slug": "resume-writing",
+  "title": "履歷寫作",
+  "desc": "內容結構、量化成就寫法、動詞庫、ATS 優化、常見地雷",
+  "section": "履歷準備"
+ },
+ {
+  "slug": "platforms",
+  "title": "求職平台攻略",
+  "desc": "LinkedIn／104／Cake 差異與寫法、平台各自的經營重點",
+  "section": "求職平台"
+ },
+ {
+  "slug": "interview-prep",
+  "title": "面試準備",
+  "desc": "STAR 法、行為面試、技術面試、談薪資、反問問題",
+  "section": "面試準備"
+ },
+ {
+  "slug": "cross-domain-narrative",
+  "title": "跨領域背景敘事技巧",
+  "desc": "非本科／轉職／跨產業背景怎麼包裝成優勢",
+  "section": "背景敘事"
+ },
+ {
+  "slug": "toolbox",
+  "title": "工具箱",
+  "desc": "checklist、AI 提示詞範本、延伸閱讀與來源書目",
+  "section": "工具箱"
+ }
+]
