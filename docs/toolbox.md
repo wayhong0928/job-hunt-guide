@@ -1,6 +1,6 @@
 # 工具箱
 
-> 這一頁放三件事：可以直接勾選的 checklist、可以套用的 AI 提示詞範本、以及本站所有內容的原始來源清單。
+> 這一頁放四件事：可以直接勾選的 checklist、求職進度追蹤表範本、可以套用的 AI 提示詞範本、以及本站所有內容的原始來源清單。
 
 ---
 
@@ -51,12 +51,26 @@
 
 ---
 
-## 二、AI 提示詞範本
+## 二、求職進度追蹤表
+
+投遞的職缺一多，很容易忘記哪家公司該回覆了、哪一場面試還沒寄感謝信。把下面這份表格複製到自己的筆記或試算表，每投一個職缺就新增一列：
+
+| 職缺 | 投遞日期 | 階段 | 後續行動 |
+|---|---|---|---|
+| A 公司／資料分析師 | 2026-09-01 | 已投遞 | 09-15 前沒有回音，寄信詢問進度 |
+| B 公司／後端工程師 | 2026-09-03 | 一面 | 當天寄感謝信，整理被追問時答不好的題目 |
+| | | | |
+
+「階段」固定用幾個詞，例如已投遞、書面審查、一面、二面、錄取通知、未錄取，之後比較好篩選。「後續行動」寫具體動作和日期，不要只寫「等通知」。這份表會記錄真實的公司與進度，請存在自己的裝置或私人檔案裡，不要放進公開的 repo。
+
+---
+
+## 三、AI 提示詞範本
 
 !!! warning "使用前必讀"
     這些範本的目的是提高提問的規格化程度，不是把判斷外包出去。每一段 AI 產出都必須經過你自己的驗證與潤飾，不能直接拿去投遞。貼入任何素材前，先移除真實姓名、公司內部代號、客戶名稱等可回推個人或雇主的資訊。範本中的 `⟨⟩` 都要換成你自己的內容。
 
-### 2.1 履歷條列改寫
+### 3.1 履歷條列改寫
 
 ```
 【情境與輸入】
@@ -75,7 +89,7 @@
 3. 改寫後請附一句話說明這個版本強調的是哪個面向（技術深度／商業影響／領導力等）。
 ```
 
-### 2.2 STAR 故事草稿
+### 3.2 STAR 故事草稿
 
 ```
 【情境與輸入】
@@ -97,7 +111,7 @@
 3. 如果這段經歷內容不足以撐起完整的 STAR，請直接告訴我哪裡資訊不夠，不要腦補。
 ```
 
-### 2.3 模擬面試官追問
+### 3.3 模擬面試官追問
 
 ```
 【角色】
@@ -118,7 +132,7 @@
 2. 回饋要具體指出問題所在，不要只給「很好」「加油」這類空泛鼓勵。
 ```
 
-### 2.4 跨領域背景敘事草稿
+### 3.4 跨領域背景敘事草稿
 
 ```
 【情境與輸入】
@@ -139,14 +153,14 @@
 
 ---
 
-## 三、延伸閱讀與資源指南
+## 四、延伸閱讀與資源指南
 
 以下是本站兩份研究筆記（Claude 版、Codex 版）引用過的所有來源，依主題分類並去除重複連結。**這份清單只是入口，不是本站內容的引用依據**，實際查證請自行點開原始連結確認當下版本，平台介面與規則變動頻繁。
 
 !!! note "查證時間"
     以下連結查證時間為 2026 年 9 月上旬，平台功能、欄位上限與市場慣例可能已經更新，投遞或引用前請自行到原始頁面確認。
 
-### 3.1 大學職涯中心與官方履歷指南
+### 4.1 大學職涯中心與官方履歷指南
 
 | 來源 | 連結 |
 |---|---|
@@ -170,7 +184,7 @@
 | MIT CAPD — Using the STAR Method | <https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/> |
 | San José State University — Behavioral Interview Questions | <https://ischool.sjsu.edu/behavioral-interview-questions> |
 
-### 3.2 求職平台官方說明
+### 4.2 求職平台官方說明
 
 | 來源 | 連結 |
 |---|---|
@@ -203,7 +217,7 @@
 | Cake Help — How to Link My Portfolio to Resume?（2026） | <https://help.cake.me/en/articles/11532189-how-to-link-my-portfolio-to-resume-on-cake> |
 | Cake Help — How to Feature Resumes or Portfolios?（2026） | <https://help.cake.me/en/articles/11532155-how-to-feature-resumes-or-portfolios-on-your-profile> |
 
-### 3.3 履歷寫作與 ATS：業界媒體與部落格
+### 4.3 履歷寫作與 ATS：業界媒體與部落格
 
 | 來源 | 連結 |
 |---|---|
@@ -226,7 +240,7 @@
 | Threads — LinkedIn vs 104 差異討論 | <https://www.threads.com/@mindreadatwork/post/DHJZ5fOPKFg/> |
 | Skrapp — LinkedIn Profile Optimization Tips for 2026 | <https://skrapp.io/blog/linkedin-profile-optimization/> |
 
-### 3.4 面試準備、企業招募頁與職業框架
+### 4.4 面試準備、企業招募頁與職業框架
 
 | 來源 | 連結 |
 |---|---|
@@ -245,7 +259,7 @@
 | DigitalDefynd — Top 100 Cyber Security Consultant Interview Questions 2026 | <https://digitaldefynd.com/IQ/top-cyber-security-consultant-interview-questions-and-answers/> |
 | Final Round AI — The 25 Most Common Cybersecurity Consultants Interview Questions | <https://www.finalroundai.com/blog/cybersecurity-consultant-interview-questions> |
 
-### 3.5 薪資談判與反問問題
+### 4.5 薪資談判與反問問題
 
 | 來源 | 連結 |
 |---|---|
@@ -257,7 +271,7 @@
 | My Consulting Offer — The 5 Best Questions to Ask in a Consulting Interview | <https://www.myconsultingoffer.org/case-study-interview-prep/questions-to-ask-interviewer/> |
 | Hacking the Case Interview — Best Questions to Ask in a Consulting Interview 2026 | <https://www.hackingthecaseinterview.com/pages/questions-to-ask-end-of-consulting-interview> |
 
-### 3.6 跨領域轉職與可轉移技能
+### 4.6 跨領域轉職與可轉移技能
 
 | 來源 | 連結 |
 |---|---|
@@ -272,7 +286,7 @@
 | ExplainThis — 面試如何回答為什麼想換工作 | <https://www.explainthis.io/zh-hant/career/why-quit-current-job> |
 | Reeracoen — 過去工作經歷業種不一致能否轉職成功 | <https://www.reeracoen.tw/en/articles/tips100_33> |
 
-### 3.7 資安框架與標準（跨領域敘事的證據基礎）
+### 4.7 資安框架與標準（跨領域敘事的證據基礎）
 
 | 來源 | 連結 |
 |---|---|
@@ -288,9 +302,10 @@
 
 ---
 
-## 四、本頁重點回顧
+## 五、本頁重點回顧
 
 - checklist 分四類：履歷內容、LinkedIn、104／Cake、面試準備，投遞前逐項核對。
+- 求職進度追蹤表記錄職缺、投遞日期、階段與後續行動，存在自己的私人檔案裡，不要公開。
 - AI 提示詞範本的重點是規格化提問，不是外包判斷。每一段產出都要自己驗證與潤飾。
 - 延伸閱讀清單依主題分七類：大學職涯中心、平台官方說明、履歷與 ATS 媒體、面試準備與企業招募頁、薪資談判、跨領域轉職、資安框架標準。
 - 所有連結僅供追查原文，不能取代自己對原始來源的查證。
