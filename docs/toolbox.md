@@ -45,7 +45,7 @@
 - [ ] 針對目標職缺，整理過「能力、題型、證據」矩陣？
 - [ ] 準備了六到八則涵蓋不同能力面向的 STAR 故事？
 - [ ] 每則故事的 Result 段落都有可衡量的佐證，不是空泛的「進展順利」？
-- [ ] 針對目標職能（軟體工程／資安顧問／其他）做了對應的技術面試準備？
+- [ ] 針對目標職能（軟體工程／AI 工程／其他）做了對應的技術面試準備？
 - [ ] 想好了薪資區間的下限與話術，不是等被問到才臨場想？
 - [ ] 準備了至少五題反問問題，聚焦具體事件而不是空泛的「文化如何」？
 
@@ -115,7 +115,7 @@
 
 ```
 【角色】
-請扮演一位⟨目標職缺，例如「資安顧問」⟩的資深面試官，
+請扮演一位⟨目標職缺，例如「AI 工程師」⟩的資深面試官，
 風格直接、會針對模糊或空泛的回答持續追問，但不刁難、不人身攻擊。
 
 【情境與輸入】
@@ -146,7 +146,7 @@
 3. 我目前還在補強什麼，避免我誇大自己已經具備的能力
 
 【邊界與作業原則】
-1. 不要把我原本的經歷直接改名成目標領域的經驗（例如不要把「開發經驗」直接寫成「資安顧問年資」）。
+1. 不要把我原本的經歷直接改名成目標領域的經驗（例如不要把「軟體開發經驗」直接寫成「AI 工程師年資」）。
 2. 我如果尚未實際做過某件事，請幫我用「正在建立／正在學習」這類措辭，不要寫成已經主導完成。
 3. 草稿完成後，幫我列出這段敘事裡有哪些主張是我需要準備具體證據支撐的。
 ```
@@ -247,7 +247,6 @@
 | Microsoft Careers — Interview tips for all roles | <https://careers.microsoft.com/v2/global/en/hiring-tips/interview-tips.html> |
 | Microsoft Careers — Technical interviews | <https://careers.microsoft.com/v2/global/en/hiring-tips/technical-interviewing.html> |
 | BCG Careers — Case Interview Preparation | <https://careers.bcg.com/global/en/case-interview-preparation> |
-| Accenture — Application Security Specialist（職缺頁） | <https://www.accenture.com/us-en/careers/jobdetails?id=R00319905_en> |
 | U.S. Bureau of Labor Statistics — Computer Systems Analysts | <https://www.bls.gov/ooh/computer-and-information-technology/computer-systems-analysts.htm> |
 | U.S. Bureau of Labor Statistics — Information Security Analysts | <https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm> |
 | Indeed — How To Use the STAR Interview Response Technique | <https://www.indeed.com/career-advice/interviewing/how-to-use-the-star-interview-response-technique> |
