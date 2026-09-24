@@ -285,16 +285,15 @@
 | ExplainThis — 面試如何回答為什麼想換工作 | <https://www.explainthis.io/zh-hant/career/why-quit-current-job> |
 | Reeracoen — 過去工作經歷業種不一致能否轉職成功 | <https://www.reeracoen.tw/en/articles/tips100_33> |
 
-### 4.7 資安框架與標準（跨領域敘事的證據基礎）
+### 4.7 職能框架與技術參考（跨領域敘事的證據基礎）
 
 | 來源 | 連結 |
 |---|---|
 | NIST — Getting Started with the NICE Framework（更新 2025-07-08） | <https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/getting-started> |
 | NIST — Workplace Skills and the NICE Framework（2024-05-16） | <https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/resources/workplace-skills-and-nice> |
 | NIST — Identifying Proficiency within the NICE Framework | <https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/identifying-proficiency-nice-framework> |
-| NIST SP 800-218 — Secure Software Development Framework 1.1（2022） | <https://csrc.nist.gov/pubs/sp/800/218/final> |
-| NIST — Secure Software Development Framework（專案頁） | <https://csrc.nist.gov/projects/ssdf> |
-| OWASP — Application Security Verification Standard | <https://owasp.org/www-project-application-security-verification-standard/> |
+| Google Cloud — MLOps: Continuous delivery and automation pipelines in machine learning | <https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning> |
+| NIST — AI Risk Management Framework（AI RMF 1.0，2023） | <https://www.nist.gov/itl/ai-risk-management-framework> |
 
 !!! warning "引用前請自行查證"
     這份清單是為了讓你知道資訊的出處，方便自行追查原文，**不是本站內容的替代引用來源**。連結會失效、內容會更新，發現不對請自行以標題搜尋確認。
@@ -306,7 +305,7 @@
 - checklist 分四類：履歷內容、LinkedIn、104／Cake、面試準備，投遞前逐項核對。
 - 求職進度追蹤表記錄職缺、投遞日期、階段與後續行動，存在自己的私人檔案裡，不要公開。
 - AI 提示詞範本的重點是規格化提問，不是外包判斷。每一段產出都要自己驗證與潤飾。
-- 延伸閱讀清單依主題分七類：大學職涯中心、平台官方說明、履歷與 ATS 媒體、面試準備與企業招募頁、薪資談判、跨領域轉職、資安框架標準。
+- 延伸閱讀清單依主題分七類：大學職涯中心、平台官方說明、履歷與 ATS 媒體、面試準備與企業招募頁、薪資談判、跨領域轉職、職能框架與技術參考。
 - 所有連結僅供追查原文，不能取代自己對原始來源的查證。
 
 ---
