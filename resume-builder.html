@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>履歷範本編輯器｜求職與面試準備知識庫</title>
+<meta name="description" content="左邊填內容、右邊即時預覽，用瀏覽器存成一頁 A4 PDF。內容只存在你的瀏覽器。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#128188;</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/resume-builder.css">
+</head>
+<body class="rb-page">
+<a class="skip" href="#main">跳到主要內容</a>
+<button class="navtoggle" id="navtoggle" aria-label="開啟導覽">☰</button>
+<!-- NAV:START（由 build.py 產生，不要手動編輯） -->
+<nav class="sidenav" id="sidenav" aria-label="全站導覽">
+<a class="brand" href="index.html"><span class="brand-mark">◈</span><span class="brand-text">求職準備<br><small>知識庫</small></span></a>
+<div class="navsearch"><input type="search" id="navfilter" placeholder="篩選頁面…" aria-label="篩選頁面"></div>
+<div class="navsec"><h2>求職起步</h2><ul>
+<li><a href="pages/getting-started.html" data-title="求職起步總覽" data-slug="getting-started" data-updated="1790261547">求職起步總覽</a></li>
+</ul></div>
+<div class="navsec"><h2>履歷準備</h2><ul>
+<li><a href="pages/resume-writing.html" data-title="履歷寫作" data-slug="resume-writing" data-updated="1790261531">履歷寫作</a></li>
+<li><a href="pages/cover-letter.html" data-title="求職信撰寫" data-slug="cover-letter" data-updated="1790225473">求職信撰寫</a></li>
+<li class="active"><a href="resume-builder.html" data-title="履歷範本編輯器">履歷範本編輯器</a></li>
+</ul></div>
+<div class="navsec"><h2>求職平台</h2><ul>
+<li><a href="pages/platforms.html" data-title="求職平台攻略" data-slug="platforms" data-updated="1788583110">求職平台攻略</a></li>
+</ul></div>
+<div class="navsec"><h2>面試準備</h2><ul>
+<li><a href="pages/interview-prep.html" data-title="面試準備" data-slug="interview-prep" data-updated="1790261547">面試準備</a></li>
+</ul></div>
+<div class="navsec"><h2>背景敘事</h2><ul>
+<li><a href="pages/cross-domain-narrative.html" data-title="跨領域背景敘事技巧" data-slug="cross-domain-narrative" data-updated="1790261531">跨領域背景敘事技巧</a></li>
+</ul></div>
+<div class="navsec"><h2>工具箱</h2><ul>
+<li><a href="pages/toolbox.html" data-title="工具箱" data-slug="toolbox" data-updated="1790261531">工具箱</a></li>
+</ul></div>
+</nav>
+<!-- NAV:END -->
+<div class="rb-wrap">
+<main id="main">
+
+<div class="rb-intro">
+<p class="crumb"><a href="index.html">首頁</a> ／ 履歷準備</p>
+<h1>履歷範本編輯器</h1>
+<p class="lede">左邊照範例的格式填入你的內容，右邊會即時顯示排好的履歷。完成後按「列印／存成 PDF」，在列印視窗的目的地選「另存為 PDF」。內容怎麼寫，請先看<a href="pages/resume-writing.html">履歷寫作</a>。</p>
+</div>
+
+<div class="rb-toolbar">
+<button type="button" class="rb-btn rb-btn-primary" id="rb-print">
+<svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+列印／存成 PDF</button>
+<button type="button" class="rb-btn" id="rb-reset">
+<svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 3v6h6"/></svg>
+清除並還原範例</button>
+<p class="rb-privacy">
+<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+內容只存在你的瀏覽器，不會上傳。<span id="rb-status" role="status"></span></p>
+</div>
+
+<div class="rb-grid">
+<section class="rb-editor" aria-labelledby="rb-editor-title">
+<h2 id="rb-editor-title">編輯</h2>
+<label class="rb-sr" for="rb-input">履歷內容</label>
+<textarea id="rb-input" spellcheck="false" autocomplete="off">
+# 王小明
+⟨你的 Email⟩｜⟨你的手機⟩｜台北市｜[作品集](https://example.com)
+
+## 專業摘要
+四年後端開發經驗，近一年負責客服問答功能的模型評估與上線流程。擅長把模型實驗整理成可重現的評估流程，正在轉往 AI 應用工程職務。
+
+## 工作經歷
+### 後端工程師｜範例電商股份有限公司｜2022/07 – 至今
+- 為客服問答功能建立**兩百題的評估集**，比較三種提示寫法的回答正確率，整理成選型建議，供團隊決定上線版本。
+- 建立線上回答的抽樣檢查流程，每週抽查一百筆回答並分類錯誤類型，作為下一版提示調整的依據。
+- 重寫訂單查詢 API 的快取策略，尖峰時段平均回應時間由 800 毫秒降到 250 毫秒。
+
+### 軟體工程師｜範例資訊有限公司｜2020/08 – 2022/06
+- 重整月結報表自動化流程，使完成時間由三天縮短至一天，每月節省約十六工時。
+- 撰寫部署與回復手冊，新進同事第一次獨立部署的準備時間由兩週縮短為一週。
+
+## 專案
+### 技術文件問答工具｜個人專案｜2024
+- 用公開技術文件建立檢索問答流程，自建五十題測試集，比較兩種文件切段方式的答對率，結果整理在專案說明頁。
+
+## 學歷
+### 資訊工程學系 學士｜範例大學｜2016 – 2020
+
+## 技能
+- **程式語言**：Python、TypeScript、SQL
+- **AI 應用**：提示設計、檢索增強生成（RAG）、模型評估
+- **工具**：Git、Docker、Linux
+</textarea>
+<details class="rb-help" open>
+<summary>支援的語法</summary>
+<table>
+<tbody>
+<tr><td><code># 姓名</code></td><td>第一行寫姓名，下一行寫聯絡資訊</td></tr>
+<tr><td><code>## 工作經歷</code></td><td>區塊標題，例如工作經歷、學歷、技能</td></tr>
+<tr><td><code>### 職稱｜公司｜期間</code></td><td>項目標題，用全形「｜」分三欄，期間會靠右</td></tr>
+<tr><td><code>- 條列</code></td><td>成果條列</td></tr>
+<tr><td><code>**粗體**</code></td><td>粗體</td></tr>
+<tr><td><code>[文字](https://…)</code></td><td>連結，只接受 http、https、mailto</td></tr>
+</tbody>
+</table>
+<p>其他寫法會照原樣顯示成文字。條列的寫法可以參考<a href="pages/resume-writing.html">履歷寫作</a>第二節的句型。</p>
+</details>
+</section>
+
+<section class="rb-preview" aria-labelledby="rb-preview-title">
+<h2 id="rb-preview-title">預覽</h2>
+<div class="rb-paper" id="rb-output" aria-live="polite"></div>
+</section>
+</div>
+
+<footer class="foot">
+<p>範例人物、公司與學校都是虛構的通用素材。本站為個人學習筆記彙整，非官方規範，履歷格式請以應徵企業的實際要求為準。</p>
+</footer>
+
+</main>
+</div>
+<script src="assets/site.js"></script>
+<script src="assets/resume-builder.js"></script>
+</body>
+</html>

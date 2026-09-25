@@ -1,0 +1,135 @@
+/* 履歷範本編輯器 —— 只用在 resume-builder.html */
+
+/* 預覽紙張固定用淺色，跟印出來的樣子一致，不跟著深色主題變 */
+.rb-page {
+  --rb-paper: #ffffff;
+  --rb-paper-ink: #23211d;
+  --rb-paper-soft: #57534a;
+  --rb-paper-rule: #d8d2c6;
+  --rb-paper-accent: #5c3520;
+}
+
+.rb-wrap { max-width: 1480px; margin: 0 auto; padding: 2.4rem 2.2rem 4rem; }
+.rb-intro h1 {
+  font-family: var(--serif); font-size: 1.95rem; line-height: 1.4; margin: 0 0 .5rem;
+}
+.rb-intro .lede { margin-bottom: 1.2rem; }
+
+/* ---------- 工具列 ---------- */
+.rb-toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; margin: 0 0 1.4rem;
+}
+.rb-btn {
+  display: inline-flex; align-items: center; gap: .45rem; cursor: pointer;
+  padding: .5rem .95rem; border-radius: 8px; font: inherit; font-size: .9rem;
+  border: 1px solid var(--rule); background: var(--panel); color: var(--ink);
+}
+.rb-btn:hover { border-color: var(--accent); color: var(--accent-ink); }
+.rb-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rb-btn-primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.rb-btn-primary:hover { color: var(--bg); filter: brightness(1.08); }
+.rb-privacy {
+  display: inline-flex; align-items: center; gap: .4rem; flex-wrap: wrap;
+  margin: 0; font-size: .85rem; color: var(--ink-soft);
+}
+#rb-status { color: var(--ink-faint); }
+#rb-status.rb-warn { color: var(--warn-rule); }
+
+/* ---------- 左右兩欄 ---------- */
+.rb-grid {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 1.6rem; align-items: start;
+}
+.rb-editor h2, .rb-preview h2 {
+  font-size: .72rem; letter-spacing: .22em; color: var(--ink-faint);
+  font-weight: 600; margin: 0 0 .5rem;
+}
+.rb-sr {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+#rb-input {
+  display: block; width: 100%; min-height: 36rem; resize: vertical;
+  padding: .9rem 1rem; border: 1px solid var(--rule); border-radius: 8px;
+  background: var(--panel); color: var(--ink);
+  font-family: var(--mono); font-size: .86rem; line-height: 1.7; tab-size: 2;
+}
+#rb-input:focus { outline: 2px solid var(--accent-soft); border-color: var(--accent); }
+
+.rb-help {
+  margin: 1rem 0 0; padding: .8rem 1rem; border-radius: 8px;
+  background: var(--bg-soft); border: 1px solid var(--rule); font-size: .86rem;
+}
+.rb-help summary { cursor: pointer; font-weight: 600; }
+.rb-help table { width: 100%; border-collapse: collapse; margin: .6rem 0; }
+.rb-help td { padding: .3rem .4rem; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+.rb-help td:first-child { white-space: nowrap; }
+.rb-help p { margin: .4rem 0 0; color: var(--ink-soft); }
+
+.rb-preview { position: sticky; top: 1.2rem; }
+
+/* ---------- 履歷紙張 ---------- */
+.rb-paper {
+  background: var(--rb-paper); color: var(--rb-paper-ink);
+  border: 1px solid var(--rule); border-radius: 4px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, .08);
+  padding: 15mm 16mm; max-width: 210mm; min-height: 20rem;
+  font-family: var(--sans); font-size: 10.5pt; line-height: 1.6;
+  /* 中文斷行：標點不落在行首；長網址必要時才斷 */
+  line-break: strict; word-break: normal; overflow-wrap: break-word;
+}
+.rb-paper a { color: inherit; border-bottom: 1px solid var(--rb-paper-rule); }
+.rb-paper p { margin: 0 0 .35rem; }
+.rb-paper ul { margin: .2rem 0 .4rem; padding-left: 1.2rem; }
+.rb-paper li { margin: .12rem 0; }
+.rb-paper strong { font-weight: 700; }
+.rb-empty { color: var(--rb-paper-soft); }
+
+.rb-head { margin-bottom: .9rem; }
+.rb-name {
+  font-family: var(--serif); font-size: 20pt; line-height: 1.3; margin: 0 0 .15rem;
+  letter-spacing: .04em;
+}
+.rb-contact { color: var(--rb-paper-soft); font-size: 9.5pt; }
+
+.rb-sec { margin-top: .75rem; }
+.rb-sec h2 {
+  font-family: var(--serif); font-size: 12pt; color: var(--rb-paper-accent);
+  margin: 0 0 .35rem; padding-bottom: .15rem; border-bottom: 1px solid var(--rb-paper-rule);
+  letter-spacing: .06em;
+}
+.rb-item { margin-bottom: .45rem; }
+.rb-item-head {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+}
+.rb-role .rb-org { color: var(--rb-paper-soft); }
+.rb-role .rb-org::before { content: "｜"; color: var(--rb-paper-rule); }
+.rb-period { flex: none; color: var(--rb-paper-soft); font-size: 9.5pt; white-space: nowrap; }
+
+/* ---------- 響應式：窄螢幕上下排列 ---------- */
+@media (max-width: 1180px) {
+  .rb-grid { grid-template-columns: minmax(0, 1fr); }
+  .rb-preview { position: static; }
+  #rb-input { min-height: 24rem; }
+}
+@media (max-width: 860px) {
+  .rb-wrap { padding: 3.4rem 1.15rem 3rem; }
+  .rb-paper { padding: 1.4rem 1.2rem; }
+}
+
+/* ---------- 列印：只印預覽區 ---------- */
+@page { size: A4; margin: 15mm 16mm; }
+@media print {
+  .rb-intro, .rb-toolbar, .rb-editor, .rb-preview > h2, .rb-page .foot { display: none !important; }
+  html, body.rb-page { background: #fff; }
+  .rb-wrap { max-width: none; margin: 0; padding: 0; }
+  .rb-grid { display: block; }
+  .rb-preview { position: static; }
+  .rb-paper {
+    border: 0; border-radius: 0; box-shadow: none; padding: 0;
+    max-width: none; min-height: 0;
+  }
+  .rb-paper a { border-bottom: 0; color: inherit; }
+  .rb-item, .rb-paper li { break-inside: avoid; }
+  .rb-sec h2 { break-after: avoid; }
+}

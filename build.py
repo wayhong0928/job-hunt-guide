@@ -17,6 +17,8 @@ DOCS = os.path.join(ROOT, "docs")
 PAGES = os.path.join(ROOT, "pages")
 
 # (檔名, 標題, 一句話說明)
+# 檔名以 .html 結尾的是放在根目錄、手寫的互動工具頁：不從 docs/ 產生，
+# 只出現在導覽列與首頁卡片，build 時同步更新它 NAV 標記之間的導覽列。
 NAV = [
     ("求職起步", [
         ("getting-started", "求職起步總覽", "整體規劃、心態調整、資源盤點、求職時程怎麼抓"),
@@ -24,6 +26,7 @@ NAV = [
     ("履歷準備", [
         ("resume-writing", "履歷寫作", "內容結構、量化成就寫法、動詞庫、ATS 優化、常見地雷"),
         ("cover-letter", "求職信撰寫", "四段結構、每封要客製的地方、常見地雷與通用範本"),
+        ("resume-builder.html", "履歷範本編輯器", "左邊填內容、右邊即時預覽，用瀏覽器存成一頁 A4 PDF"),
     ]),
     ("求職平台", [
         ("platforms", "求職平台攻略", "LinkedIn／104／Cake 差異與寫法、平台各自的經營重點"),
@@ -41,10 +44,14 @@ NAV = [
 
 SLUG_TITLE = {}
 FLAT = []
+TOOLS = []
 for _sec, items in NAV:
     for slug, title, desc in items:
         SLUG_TITLE[slug] = title
-        FLAT.append((slug, title, desc))
+        if slug.endswith(".html"):
+            TOOLS.append(slug)
+        else:
+            FLAT.append((slug, title, desc))
 
 
 _UPDATED_CACHE = {}
@@ -92,6 +99,9 @@ def nav_html(active, prefix=""):
         out.append(f'<div class="navsec"><h2>{sec}</h2><ul>')
         for slug, title, _d in items:
             cls = ' class="active"' if slug == active else ""
+            if slug in TOOLS:
+                out.append(f'<li{cls}><a href="{prefix}{slug}" data-title="{title}">{title}</a></li>')
+                continue
             updated = source_updated(os.path.join(DOCS, slug + ".md"))
             out.append(f'<li{cls}><a href="{prefix}pages/{slug}.html" '
                        f'data-title="{title}" data-slug="{slug}" '
@@ -218,7 +228,8 @@ def build_index():
     for i, (sec, items) in enumerate(NAV, start=1):
         cards = []
         for slug, title, desc in items:
-            cards.append(f'<a class="card" href="pages/{slug}.html">'
+            href = slug if slug in TOOLS else f"pages/{slug}.html"
+            cards.append(f'<a class="card" href="{href}">'
                          f'<h3>{title}</h3><p>{desc}</p></a>')
         parts.append(
             f'<section class="mapsec"><h2><span class="num">{i:02d}</span>{sec}</h2>'
@@ -228,6 +239,25 @@ def build_index():
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
         f.write(out)
     print("  [ok] index.html")
+
+
+NAV_START = "<!-- NAV:START（由 build.py 產生，不要手動編輯） -->"
+NAV_END = "<!-- NAV:END -->"
+
+
+def build_tools():
+    for slug in TOOLS:
+        path = os.path.join(ROOT, slug)
+        text = open(path, encoding="utf-8").read()
+        start, end = text.find(NAV_START), text.find(NAV_END)
+        if start == -1 or end == -1:
+            print("  [!] missing NAV markers", slug)
+            continue
+        text = (text[:start + len(NAV_START)] + "\n" + nav_html(slug, prefix="")
+                + "\n" + text[end:])
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(text)
+        print("  [ok]", slug)
 
 
 def section_of(slug):
@@ -284,4 +314,5 @@ def build():
 if __name__ == "__main__":
     build()
     build_index()
+    build_tools()
     print("完成。")
