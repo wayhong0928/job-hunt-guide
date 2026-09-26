@@ -188,6 +188,9 @@ label.rb-btn { user-select: none; }
    實際邊界改由紙張內距提供，box-decoration-break: clone 讓每一頁都保留上下內距。 */
 @page { size: A4; margin: 0; }
 @media print {
+  /* 只印履歷：body 底下除了 .rb-wrap 以外全部隱藏，連瀏覽器擴充功能塞進頁面的
+     浮動按鈕（例如 RSS 擴充功能的圖示）也一起藏掉；掛在 <html> 底下的同理 */
+  html > :not(head):not(body), body.rb-page > :not(.rb-wrap) { display: none !important; }
   .rb-intro, .rb-toolbar, .rb-notes, .rb-editor, .rb-preview > h2, .rb-dialog,
   .rb-page .foot { display: none !important; }
   html, body.rb-page { background: #fff; }
