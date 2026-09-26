@@ -197,7 +197,9 @@
       "## 技能",
       "- **程式語言**：Python、JavaScript、SQL",
       "- **工具**：Git、Figma、Excel",
-      "- **語言**：英文（多益 785）",
+      "",
+      "## 語言能力",
+      "- 英文：TOEIC 多益 785 分（2025）",
       ""
     ].join("\n"),
     career: [
@@ -231,19 +233,82 @@
   };
   var TEMPLATE_NAMES = { engineer: "在職工程師", student: "學生找實習", career: "跨領域轉職" };
 
-  /* ---------- 插入用的區塊 ---------- */
+  /* ---------- 插入用的區塊 ----------
+     同名區塊（## 標題）只會有一個：已經存在就在區塊尾端加一個項目或條列，
+     沒有才在游標位置建立新區塊。single 的區塊（專業摘要）已存在時只把游標移過去。 */
   var BLOCKS = {
-    summary: "## 專業摘要\n⟨兩到四行：你的定位、核心經驗，以及能為這個職缺帶來什麼⟩",
-    work: "## 工作經歷\n### ⟨職稱⟩｜⟨公司⟩｜⟨2024/07 – 至今⟩\n- ⟨動詞開頭：做了什麼、怎麼做、結果如何⟩",
-    intern: "## 實習經歷\n### ⟨實習職稱⟩｜⟨公司⟩｜⟨2025/07 – 2025/08⟩\n- ⟨動詞開頭：做了什麼、怎麼做、結果如何⟩",
-    project: "## 專案\n### ⟨專案名稱⟩｜⟨課程、個人或團隊，你的角色⟩｜⟨年份⟩\n- ⟨用了什麼技術、解決什麼問題、結果如何⟩",
-    edu: "## 學歷\n### ⟨系所 學位⟩｜⟨學校⟩｜⟨入學 – 畢業或預計畢業⟩\n- 相關課程：⟨只列跟職缺有關的⟩",
-    skills: "## 技能\n- **⟨類別⟩**：⟨技能一⟩、⟨技能二⟩",
-    cert: "## 證照\n- ⟨證照名稱⟩（⟨發證單位⟩，⟨年份⟩）",
-    lang: "## 語言能力\n- 英文：⟨檢定成績，或實際使用的情境⟩",
-    club: "## 社團與活動\n### ⟨社團名稱 職位⟩｜⟨學校⟩｜⟨期間⟩\n- ⟨規劃或帶領了什麼，規模多大⟩",
-    award: "## 得獎\n- ⟨獎項名稱⟩（⟨主辦單位⟩，⟨年份⟩）"
+    summary: { title: "專業摘要", body: "⟨兩到四行：你的定位、核心經驗，以及能為這個職缺帶來什麼⟩", single: true },
+    work: { title: "工作經歷", item: true,
+      body: "### ⟨職稱⟩｜⟨公司⟩｜⟨2024/07 – 至今⟩\n- ⟨動詞開頭：做了什麼、怎麼做、結果如何⟩" },
+    intern: { title: "實習經歷", item: true,
+      body: "### ⟨實習職稱⟩｜⟨公司⟩｜⟨2025/07 – 2025/08⟩\n- ⟨動詞開頭：做了什麼、怎麼做、結果如何⟩" },
+    project: { title: "專案", item: true,
+      body: "### ⟨專案名稱⟩｜⟨課程、個人或團隊，你的角色⟩｜⟨年份⟩\n- ⟨用了什麼技術、解決什麼問題、結果如何⟩" },
+    edu: { title: "學歷", item: true,
+      body: "### ⟨系所 學位⟩｜⟨學校⟩｜⟨入學 – 畢業或預計畢業⟩\n- 相關課程：⟨只列跟職缺有關的⟩" },
+    club: { title: "社團與活動", item: true,
+      body: "### ⟨社團名稱 職位⟩｜⟨學校⟩｜⟨期間⟩\n- ⟨規劃或帶領了什麼，規模多大⟩" },
+    skills: { title: "技能", body: "- **⟨類別⟩**：⟨技能一⟩、⟨技能二⟩" },
+    cert: { title: "證照", body: "- ⟨證照名稱⟩（⟨發證單位⟩，⟨年份⟩）" },
+    lang: { title: "語言能力", body: "- ⟨語言⟩：⟨檢定名稱與成績，或實際使用的情境⟩" },
+    award: { title: "得獎", body: "- ⟨獎項名稱⟩（⟨主辦單位⟩，⟨年份⟩）" }
   };
+  /* 語言檢定：一律加進「語言能力」區塊 */
+  var LANGS = {
+    toeic: "- 英文：TOEIC 多益 ⟨分數⟩ 分（⟨年份⟩）",
+    ielts: "- 英文：IELTS 雅思 ⟨總分⟩ 級（⟨年份⟩）",
+    toefl: "- 英文：TOEFL iBT 托福 ⟨分數⟩ 分（⟨年份⟩）",
+    gept: "- 英文：全民英檢 GEPT ⟨級別⟩（⟨年份⟩）",
+    jlpt: "- 日文：JLPT 日本語能力試驗 ⟨N1–N5⟩（⟨年份⟩）",
+    topik: "- 韓文：TOPIK 韓國語能力測驗 ⟨級數⟩（⟨年份⟩）"
+  };
+
+  function findSection(lines, title) {
+    for (var i = 0; i < lines.length; i++) {
+      var m = /^##\s+(.*)$/.exec(lines[i].trim());
+      if (m && m[1].trim() === title) { return i; }
+    }
+    return -1;
+  }
+
+  /* 加到既有區塊尾端；回傳 { text, caret }，找不到區塊回傳 null */
+  function appendToSection(src, title, body, isItem) {
+    var lines = src.replace(/\r\n?/g, "\n").split("\n");
+    var start = findSection(lines, title);
+    if (start === -1) { return null; }
+    var end = lines.length;
+    for (var j = start + 1; j < lines.length; j++) {
+      if (/^##\s/.test(lines[j].trim())) { end = j; break; }
+    }
+    var last = end - 1;
+    while (last > start && lines[last].trim() === "") { last--; }
+    var head = lines.slice(0, last + 1).concat(isItem ? [""] : [], body.split("\n")).join("\n");
+    var rest = lines.slice(last + 1);
+    while (rest.length && rest[0].trim() === "") { rest.shift(); }
+    return { text: head + (rest.length ? "\n\n" + rest.join("\n") : "\n"), caret: head.length };
+  }
+
+  /* 游標位置插入一段新區塊，前後補空行 */
+  function insertAt(src, at, block) {
+    var before = src.slice(0, at);
+    var after = src.slice(at);
+    var lead = before === "" || /\n\n$/.test(before) ? "" : (/\n$/.test(before) ? "\n" : "\n\n");
+    var tail = after === "" || /^\n/.test(after) ? "\n" : "\n\n";
+    var text = lead + block + tail;
+    return { text: before + text + after, caret: before.length + lead.length + block.length };
+  }
+
+  /* 點一次區塊或語言檢定按鈕的結果；summary 已存在時 text 不變，只回傳游標位置 */
+  function addBlock(src, at, def) {
+    var lines = src.replace(/\r\n?/g, "\n").split("\n");
+    var idx = findSection(lines, def.title);
+    if (idx !== -1 && def.single) {
+      return { text: src, caret: lines.slice(0, idx + 1).join("\n").length, existed: true };
+    }
+    var added = appendToSection(src, def.title, def.body, def.item);
+    if (added) { return added; }
+    return insertAt(src, at, "## " + def.title + "\n" + def.body);
+  }
 
   /* 聯絡方式接在姓名下一行；還沒有姓名就先補一行 */
   function addContact(src, snippet) {
@@ -396,22 +461,28 @@
         input.focus();
       });
     });
+    function applyBlock(def) {
+      var v = input.value;
+      var at = typeof input.selectionStart === "number" ? input.selectionStart : v.length;
+      var r = addBlock(v, at, def);
+      input.focus();
+      if (r.text !== v) {
+        input.value = r.text;
+        input.dispatchEvent(new Event("input"));
+      }
+      input.setSelectionRange(r.caret, r.caret);
+      if (r.existed) { setStatus("已經有「" + def.title + "」了，游標移到那一段。"); }
+    }
     Array.prototype.forEach.call(document.querySelectorAll("[data-block]"), function (btn) {
       btn.addEventListener("click", function () {
-        var block = BLOCKS[btn.getAttribute("data-block")];
-        if (!block) { return; }
-        var v = input.value;
-        var at = typeof input.selectionStart === "number" ? input.selectionStart : v.length;
-        var before = v.slice(0, at);
-        var after = v.slice(at);
-        var lead = before === "" || /\n\n$/.test(before) ? "" : (/\n$/.test(before) ? "\n" : "\n\n");
-        var tail = after === "" || /^\n/.test(after) ? "\n" : "\n\n";
-        var text = lead + block + tail;
-        input.value = before + text + after;
-        var caret = before.length + text.length;
-        input.focus();
-        input.setSelectionRange(caret, caret);
-        input.dispatchEvent(new Event("input"));
+        var def = BLOCKS[btn.getAttribute("data-block")];
+        if (def) { applyBlock(def); }
+      });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-lang]"), function (btn) {
+      btn.addEventListener("click", function () {
+        var line = LANGS[btn.getAttribute("data-lang")];
+        if (line) { applyBlock({ title: "語言能力", body: line }); }
       });
     });
 
@@ -546,5 +617,8 @@
   });
 
   /* 給測試用：不影響頁面 */
-  window.ResumeBuilder = { parse: parse, render: render, inline: inline, check: check, addContact: addContact };
+  window.ResumeBuilder = {
+    parse: parse, render: render, inline: inline, check: check, addContact: addContact,
+    addBlock: addBlock, BLOCKS: BLOCKS, LANGS: LANGS
+  };
 })();
