@@ -76,7 +76,7 @@
 <p class="rb-privacy">
 <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
 內容只暫存在這個瀏覽器，不會上傳。無痕視窗、清除瀏覽資料或換一台電腦都會看不到，重要的版本請按「下載 .md 備份」存一份。<span id="rb-status" role="status"></span></p>
-<p class="rb-printtip"><strong>存成 PDF 前：</strong>在列印視窗把目的地選「另存為 PDF」，再點「更多設定」（有些版本寫「顯示更多設定」），取消勾選「頁首及頁尾」。這個選項預設是打勾的，不取消的話 PDF 上下會多印出日期、網頁標題、網址和頁碼。Safari 在「顯示詳細資訊」裡取消「列印頁首和頁尾」。</p>
+<p class="rb-printtip"><strong>存成 PDF：</strong>在列印視窗把目的地選「另存為 PDF」，「邊界」維持「預設」。這個頁面已經把頁面邊界設成 0，Chrome 和 Edge 不會印出頁首及頁尾（日期、網址、頁碼）；如果列印視窗裡還看得到「頁首及頁尾」選項，請取消勾選。Safari 在「顯示詳細資訊」裡取消「列印頁首和頁尾」。</p>
 </div>
 
 <div class="rb-grid">
@@ -189,7 +189,7 @@
 <label for="rb-set-mh">左右邊界 <output id="rb-out-mh"></output></label>
 <input type="range" id="rb-set-mh" data-key="mh" min="8" max="25" step="1">
 </div>
-<p class="rb-hint">字體只用電腦裡已經有的字型，沒有安裝的會自動換成相近的字型。邊界會套用到印出來的 PDF，列印視窗的「邊界」維持「預設」就好。<button type="button" class="rb-linkbtn" id="rb-settings-reset">還原預設版面</button></p>
+<p class="rb-hint">字體只用電腦裡已經有的字型，沒有安裝的會自動換成相近的字型。邊界會套用到印出來的 PDF 每一頁，列印視窗的「邊界」維持「預設」就好。<button type="button" class="rb-linkbtn" id="rb-settings-reset">還原預設版面</button></p>
 </details>
 
 <details class="rb-help" open>
@@ -231,12 +231,11 @@
 </div>
 
 <dialog class="rb-dialog" id="rb-print-dialog" aria-labelledby="rb-dialog-title">
-<h2 id="rb-dialog-title">存成 PDF 前，先關掉頁首及頁尾</h2>
+<h2 id="rb-dialog-title">存成 PDF 前確認三件事</h2>
 <ol>
 <li>目的地選「另存為 PDF」。</li>
-<li>點「更多設定」（有些版本寫「顯示更多設定」）。</li>
-<li>取消勾選「頁首及頁尾」。它預設是打勾的，不取消的話 PDF 上下會多出日期、網頁標題、網址和頁碼。</li>
 <li>「邊界」維持「預設」、「縮放」維持 100%，版面設定裡的邊界才會照著印。</li>
+<li>這個頁面不會印出頁首及頁尾。如果點「更多設定」後還看得到「頁首及頁尾」，請取消勾選。</li>
 </ol>
 <p class="rb-hint">Safari：在「顯示詳細資訊」裡取消「列印頁首和頁尾」。PDF 檔名會自動用「姓名_履歷」。</p>
 <label class="rb-dialog-check"><input type="checkbox" id="rb-print-mute"> 這個瀏覽器以後不用再提醒</label>

@@ -184,7 +184,9 @@ label.rb-btn { user-select: none; }
 }
 
 /* ---------- 列印：只印預覽區 ---------- */
-@page { size: A4; margin: 15mm 16mm; }
+/* @page 邊界設為 0：瀏覽器沒有空間印頁首及頁尾（日期、網址、頁碼），Chrome 也會隱藏該選項。
+   實際邊界改由紙張內距提供，box-decoration-break: clone 讓每一頁都保留上下內距。 */
+@page { size: A4; margin: 0; }
 @media print {
   .rb-intro, .rb-toolbar, .rb-notes, .rb-editor, .rb-preview > h2, .rb-dialog,
   .rb-page .foot { display: none !important; }
@@ -193,7 +195,9 @@ label.rb-btn { user-select: none; }
   .rb-grid { display: block; }
   .rb-preview { position: static; }
   .rb-paper {
-    border: 0; border-radius: 0; box-shadow: none; padding: 0;
+    border: 0; border-radius: 0; box-shadow: none;
+    padding: var(--rb-mv, 15mm) var(--rb-mh, 16mm);
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
     max-width: none; min-height: 0;
   }
   .rb-paper a { border-bottom: 0; color: inherit; }

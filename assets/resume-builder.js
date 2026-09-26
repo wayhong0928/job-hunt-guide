@@ -377,8 +377,6 @@
     var tplSelect = document.getElementById("rb-template");
     var fileInput = document.getElementById("rb-file");
     var dialog = document.getElementById("rb-print-dialog");
-    var pageStyle = document.createElement("style");
-    document.head.appendChild(pageStyle);
 
     TEMPLATES.engineer = input.defaultValue;
     var dirty = false; /* 上次下載或列印之後有沒有再改過 */
@@ -499,7 +497,6 @@
       st.setProperty("--rb-lh", String(settings.lh));
       st.setProperty("--rb-mv", settings.mv + "mm");
       st.setProperty("--rb-mh", settings.mh + "mm");
-      pageStyle.textContent = "@page { size: A4; margin: " + settings.mv + "mm " + settings.mh + "mm; }";
       var labels = {
         size: settings.size + " pt",
         track: settings.track === 0 ? "無" : settings.track.toFixed(2) + " 字寬",
