@@ -135,4 +135,6 @@
 
 ---
 
+內容寫好後，可以用[履歷範本編輯器](../resume-builder.html)套用單欄範本，在瀏覽器直接存成 PDF。
+
 **延伸**：[求職起步總覽](getting-started.md)｜[求職平台攻略](platforms.md)｜[面試準備](interview-prep.md)｜[工具箱：checklist 與延伸閱讀](toolbox.md)

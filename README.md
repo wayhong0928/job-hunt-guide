@@ -56,10 +56,13 @@
 ```
 .
 ├── index.html            首頁（知識地圖入口，由 build.py 產生）
+├── resume-builder.html   履歷範本編輯器（手寫的互動工具頁，導覽列由 build.py 同步）
 ├── build.py              從 docs/*.md 產生 pages/*.html 與 index.html
 ├── assets/
 │   ├── style.css         共用樣式（含深色模式與列印樣式）
 │   ├── site.js           導覽開合、篩選、目錄標示、檢查清單狀態
+│   ├── resume-builder.css  履歷範本編輯器的版面與列印樣式
+│   ├── resume-builder.js   履歷範本編輯器的解析、預覽與本機暫存
 │   └── index.json        頁面索引（由 build.py 產生）
 ├── docs/                 ★ 內容來源，可直接在 Obsidian 開啟閱讀
 │   ├── getting-started.md

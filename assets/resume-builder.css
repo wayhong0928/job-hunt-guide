@@ -1,0 +1,209 @@
+@charset "UTF-8";
+/* 履歷範本編輯器 —— 只用在 resume-builder.html */
+
+/* 預覽紙張固定用淺色，跟印出來的樣子一致，不跟著深色主題變 */
+.rb-page {
+  --rb-paper: #ffffff;
+  --rb-paper-ink: #23211d;
+  --rb-paper-soft: #57534a;
+  --rb-paper-rule: #d8d2c6;
+  --rb-paper-accent: #5c3520;
+}
+
+.rb-wrap { max-width: 1480px; margin: 0 auto; padding: 2.4rem 2.2rem 4rem; }
+.rb-intro h1 {
+  font-family: var(--serif); font-size: 1.95rem; line-height: 1.4; margin: 0 0 .5rem;
+}
+.rb-intro .lede { margin-bottom: 1.2rem; }
+
+/* ---------- 工具列 ---------- */
+.rb-toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; margin: 0 0 1.4rem;
+}
+.rb-btn {
+  display: inline-flex; align-items: center; gap: .45rem; cursor: pointer;
+  padding: .5rem .95rem; border-radius: 8px; font: inherit; font-size: .9rem;
+  border: 1px solid var(--rule); background: var(--panel); color: var(--ink);
+}
+.rb-btn:hover { border-color: var(--accent); color: var(--accent-ink); }
+.rb-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rb-btn-primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.rb-btn-primary:hover { color: var(--bg); filter: brightness(1.08); }
+.rb-privacy {
+  display: inline-flex; align-items: center; gap: .4rem; flex-wrap: wrap;
+  margin: 0; font-size: .85rem; color: var(--ink-soft);
+}
+#rb-status { color: var(--ink-faint); margin-left: .3rem; }
+.rb-select {
+  display: inline-flex; align-items: center; gap: .45rem; font-size: .9rem; color: var(--ink-soft);
+}
+.rb-select select, .rb-settings select {
+  font: inherit; font-size: .9rem; padding: .45rem .6rem; border-radius: 8px;
+  border: 1px solid var(--rule); background: var(--panel); color: var(--ink);
+}
+label.rb-btn { user-select: none; }
+#rb-file:focus-visible + .rb-btn, label.rb-btn:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rb-notes { margin: 0 0 1.4rem; display: grid; gap: .6rem; }
+.rb-notes .rb-privacy { display: block; }
+.rb-printtip {
+  margin: 0; padding: .6rem .85rem; font-size: .86rem; line-height: 1.7;
+  background: var(--warn-bg); border-left: 3px solid var(--warn-rule); border-radius: 4px;
+}
+
+/* ---------- 插入、檢查、版面設定 ---------- */
+.rb-panel {
+  margin: 0 0 1rem; padding: .7rem 1rem; border-radius: 8px;
+  background: var(--bg-soft); border: 1px solid var(--rule); font-size: .86rem;
+}
+.rb-panel summary { cursor: pointer; font-weight: 600; }
+.rb-chip-label { margin: .7rem 0 .35rem; font-size: .8rem; color: var(--ink-soft); }
+.rb-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.rb-chip {
+  cursor: pointer; font: inherit; font-size: .82rem; padding: .25rem .7rem;
+  border-radius: 999px; border: 1px solid var(--rule); background: var(--panel); color: var(--ink);
+}
+.rb-chip:hover { border-color: var(--accent); color: var(--accent-ink); }
+.rb-chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rb-hint { margin: .6rem 0 0; font-size: .8rem; color: var(--ink-faint); }
+.rb-linkbtn {
+  cursor: pointer; font: inherit; padding: 0; margin-left: .3rem; border: 0; background: none;
+  color: var(--accent-ink); text-decoration: underline;
+}
+.rb-checkwrap { margin: .8rem 0 1rem; }
+.rb-checkwrap .rb-chip-label { margin-top: 0; }
+.rb-checks { list-style: none; margin: 0; padding: 0; font-size: .84rem; }
+.rb-checks li { position: relative; padding: .15rem 0 .15rem 1.4rem; color: var(--ink-soft); }
+.rb-checks li::before { position: absolute; left: 0; font-weight: 700; }
+.rb-checks .rb-ok::before { content: "✓"; color: var(--ok-rule); }
+.rb-checks .rb-todo::before { content: "!"; color: var(--warn-rule); left: .3rem; }
+.rb-settings {
+  display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .55rem .9rem;
+  align-items: center; margin-top: .7rem;
+}
+.rb-settings label { color: var(--ink-soft); }
+.rb-settings output { color: var(--ink-faint); margin-left: .3rem; font-variant-numeric: tabular-nums; }
+.rb-settings input[type=range] { width: 100%; accent-color: var(--accent); }
+.rb-tips { margin: .6rem 0 0; padding-left: 1.2rem; }
+.rb-tips li { margin: .3rem 0; }
+
+/* ---------- 列印提醒對話框 ---------- */
+.rb-dialog {
+  max-width: 34rem; width: calc(100% - 2rem); padding: 1.3rem 1.4rem; border-radius: 10px;
+  border: 1px solid var(--rule); background: var(--panel); color: var(--ink);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .25);
+}
+.rb-dialog::backdrop { background: rgba(0, 0, 0, .35); }
+.rb-dialog h2 { font-family: var(--serif); font-size: 1.15rem; margin: 0 0 .7rem; }
+.rb-dialog ol { margin: 0 0 .6rem; padding-left: 1.3rem; font-size: .92rem; line-height: 1.7; }
+.rb-dialog-check { display: flex; align-items: center; gap: .4rem; margin: .8rem 0 0; font-size: .86rem; }
+.rb-dialog-actions { display: flex; justify-content: flex-end; gap: .6rem; margin-top: 1rem; }
+#rb-status.rb-warn { color: var(--warn-rule); }
+
+/* ---------- 左右兩欄 ---------- */
+.rb-grid {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 1.6rem; align-items: start;
+}
+.rb-editor h2, .rb-preview h2 {
+  font-size: .72rem; letter-spacing: .22em; color: var(--ink-faint);
+  font-weight: 600; margin: 0 0 .5rem;
+}
+.rb-sr {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+#rb-input {
+  display: block; width: 100%; min-height: 36rem; resize: vertical;
+  padding: .9rem 1rem; border: 1px solid var(--rule); border-radius: 8px;
+  background: var(--panel); color: var(--ink);
+  font-family: var(--mono); font-size: .86rem; line-height: 1.7; tab-size: 2;
+}
+#rb-input:focus { outline: 2px solid var(--accent-soft); border-color: var(--accent); }
+
+.rb-help {
+  margin: 1rem 0 0; padding: .8rem 1rem; border-radius: 8px;
+  background: var(--bg-soft); border: 1px solid var(--rule); font-size: .86rem;
+}
+.rb-help summary { cursor: pointer; font-weight: 600; }
+.rb-help table { width: 100%; border-collapse: collapse; margin: .6rem 0; }
+.rb-help td { padding: .3rem .4rem; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+.rb-help td:first-child { white-space: nowrap; }
+.rb-help p { margin: .4rem 0 0; color: var(--ink-soft); }
+
+.rb-preview { position: sticky; top: 1.2rem; }
+
+/* ---------- 履歷紙張 ---------- */
+.rb-paper {
+  background: var(--rb-paper); color: var(--rb-paper-ink);
+  border: 1px solid var(--rule); border-radius: 4px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, .08);
+  padding: var(--rb-mv, 15mm) var(--rb-mh, 16mm); max-width: 210mm; min-height: 20rem;
+  font-family: var(--rb-font, var(--sans)); font-size: var(--rb-size, 10.5pt);
+  font-weight: var(--rb-weight, 400); letter-spacing: var(--rb-track, 0);
+  line-height: var(--rb-lh, 1.6);
+  /* 中文斷行：標點不落在行首；長網址必要時才斷 */
+  line-break: strict; word-break: normal; overflow-wrap: break-word;
+}
+.rb-paper a { color: inherit; border-bottom: 1px solid var(--rb-paper-rule); }
+.rb-paper p { margin: 0 0 .35rem; }
+.rb-paper ul { margin: .2rem 0 .4rem; padding-left: 1.2rem; }
+.rb-paper li { margin: .12rem 0; }
+.rb-paper strong { font-weight: 700; }
+.rb-empty { color: var(--rb-paper-soft); }
+
+.rb-head { margin-bottom: .9rem; }
+.rb-name {
+  font-family: var(--rb-head-font, var(--serif)); font-size: 1.9em; line-height: 1.3; margin: 0 0 .15rem;
+  letter-spacing: .04em;
+}
+.rb-contact { color: var(--rb-paper-soft); font-size: .9em; }
+
+.rb-sec { margin-top: .75rem; }
+.rb-sec h2 {
+  font-family: var(--rb-head-font, var(--serif)); font-size: 1.14em; color: var(--rb-paper-accent);
+  margin: 0 0 .35rem; padding-bottom: .15rem; border-bottom: 1px solid var(--rb-paper-rule);
+  letter-spacing: .06em;
+}
+.rb-item { margin-bottom: .45rem; }
+.rb-item-head {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+}
+.rb-role .rb-org { color: var(--rb-paper-soft); }
+.rb-role .rb-org::before { content: "｜"; color: var(--rb-paper-rule); }
+.rb-period { flex: none; color: var(--rb-paper-soft); font-size: .9em; white-space: nowrap; }
+
+/* ---------- 響應式：窄螢幕上下排列 ---------- */
+@media (max-width: 1180px) {
+  .rb-grid { grid-template-columns: minmax(0, 1fr); }
+  .rb-preview { position: static; }
+  #rb-input { min-height: 24rem; }
+}
+@media (max-width: 860px) {
+  .rb-wrap { padding: 3.4rem 1.15rem 3rem; }
+  .rb-paper { padding: 1.4rem 1.2rem; }
+}
+
+/* ---------- 列印：只印預覽區 ---------- */
+/* @page 邊界設為 0：瀏覽器沒有空間印頁首及頁尾（日期、網址、頁碼），Chrome 也會隱藏該選項。
+   實際邊界改由紙張內距提供，box-decoration-break: clone 讓每一頁都保留上下內距。 */
+@page { size: A4; margin: 0; }
+@media print {
+  /* 只印履歷：body 底下除了 .rb-wrap 以外全部隱藏，連瀏覽器擴充功能塞進頁面的
+     浮動按鈕（例如 RSS 擴充功能的圖示）也一起藏掉；掛在 <html> 底下的同理 */
+  html > :not(head):not(body), body.rb-page > :not(.rb-wrap) { display: none !important; }
+  .rb-intro, .rb-toolbar, .rb-notes, .rb-editor, .rb-preview > h2, .rb-dialog,
+  .rb-page .foot { display: none !important; }
+  html, body.rb-page { background: #fff; }
+  .rb-wrap { max-width: none; margin: 0; padding: 0; }
+  .rb-grid { display: block; }
+  .rb-preview { position: static; }
+  .rb-paper {
+    border: 0; border-radius: 0; box-shadow: none;
+    padding: var(--rb-mv, 15mm) var(--rb-mh, 16mm);
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    max-width: none; min-height: 0;
+  }
+  .rb-paper a { border-bottom: 0; color: inherit; }
+  .rb-item, .rb-paper li { break-inside: avoid; }
+  .rb-sec h2 { break-after: avoid; }
+}

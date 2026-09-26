@@ -91,7 +91,7 @@
       });
     }
 
-    /* 側欄區塊：預設只展開目前頁面所在區塊 */
+    /* 側欄區塊：預設全部展開，使用者可自行手動收合 */
     var navSections = nav ? nav.querySelectorAll(".navsec") : [];
     function setSectionExpanded(sec, expanded) {
       sec.classList.toggle("collapsed", !expanded);
@@ -112,7 +112,7 @@
       }
       heading.textContent = "";
       heading.appendChild(sectionToggle);
-      setSectionExpanded(sec, Boolean(sec.querySelector("li.active")));
+      setSectionExpanded(sec, true);
       sectionToggle.addEventListener("click", function () {
         var filterInput = document.getElementById("navfilter");
         if (filterInput && filterInput.value.trim() !== "") { return; }
