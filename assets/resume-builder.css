@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 履歷範本編輯器 —— 只用在 resume-builder.html */
 
 /* 預覽紙張固定用淺色，跟印出來的樣子一致，不跟著深色主題變 */
@@ -32,7 +33,70 @@
   display: inline-flex; align-items: center; gap: .4rem; flex-wrap: wrap;
   margin: 0; font-size: .85rem; color: var(--ink-soft);
 }
-#rb-status { color: var(--ink-faint); }
+#rb-status { color: var(--ink-faint); margin-left: .3rem; }
+.rb-select {
+  display: inline-flex; align-items: center; gap: .45rem; font-size: .9rem; color: var(--ink-soft);
+}
+.rb-select select, .rb-settings select {
+  font: inherit; font-size: .9rem; padding: .45rem .6rem; border-radius: 8px;
+  border: 1px solid var(--rule); background: var(--panel); color: var(--ink);
+}
+label.rb-btn { user-select: none; }
+#rb-file:focus-visible + .rb-btn, label.rb-btn:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rb-notes { margin: 0 0 1.4rem; display: grid; gap: .6rem; }
+.rb-notes .rb-privacy { display: block; }
+.rb-printtip {
+  margin: 0; padding: .6rem .85rem; font-size: .86rem; line-height: 1.7;
+  background: var(--warn-bg); border-left: 3px solid var(--warn-rule); border-radius: 4px;
+}
+
+/* ---------- 插入、檢查、版面設定 ---------- */
+.rb-panel {
+  margin: 0 0 1rem; padding: .7rem 1rem; border-radius: 8px;
+  background: var(--bg-soft); border: 1px solid var(--rule); font-size: .86rem;
+}
+.rb-panel summary { cursor: pointer; font-weight: 600; }
+.rb-chip-label { margin: .7rem 0 .35rem; font-size: .8rem; color: var(--ink-soft); }
+.rb-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.rb-chip {
+  cursor: pointer; font: inherit; font-size: .82rem; padding: .25rem .7rem;
+  border-radius: 999px; border: 1px solid var(--rule); background: var(--panel); color: var(--ink);
+}
+.rb-chip:hover { border-color: var(--accent); color: var(--accent-ink); }
+.rb-chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rb-hint { margin: .6rem 0 0; font-size: .8rem; color: var(--ink-faint); }
+.rb-linkbtn {
+  cursor: pointer; font: inherit; padding: 0; margin-left: .3rem; border: 0; background: none;
+  color: var(--accent-ink); text-decoration: underline;
+}
+.rb-checkwrap { margin: .8rem 0 1rem; }
+.rb-checkwrap .rb-chip-label { margin-top: 0; }
+.rb-checks { list-style: none; margin: 0; padding: 0; font-size: .84rem; }
+.rb-checks li { position: relative; padding: .15rem 0 .15rem 1.4rem; color: var(--ink-soft); }
+.rb-checks li::before { position: absolute; left: 0; font-weight: 700; }
+.rb-checks .rb-ok::before { content: "✓"; color: var(--ok-rule); }
+.rb-checks .rb-todo::before { content: "!"; color: var(--warn-rule); left: .3rem; }
+.rb-settings {
+  display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .55rem .9rem;
+  align-items: center; margin-top: .7rem;
+}
+.rb-settings label { color: var(--ink-soft); }
+.rb-settings output { color: var(--ink-faint); margin-left: .3rem; font-variant-numeric: tabular-nums; }
+.rb-settings input[type=range] { width: 100%; accent-color: var(--accent); }
+.rb-tips { margin: .6rem 0 0; padding-left: 1.2rem; }
+.rb-tips li { margin: .3rem 0; }
+
+/* ---------- 列印提醒對話框 ---------- */
+.rb-dialog {
+  max-width: 34rem; width: calc(100% - 2rem); padding: 1.3rem 1.4rem; border-radius: 10px;
+  border: 1px solid var(--rule); background: var(--panel); color: var(--ink);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .25);
+}
+.rb-dialog::backdrop { background: rgba(0, 0, 0, .35); }
+.rb-dialog h2 { font-family: var(--serif); font-size: 1.15rem; margin: 0 0 .7rem; }
+.rb-dialog ol { margin: 0 0 .6rem; padding-left: 1.3rem; font-size: .92rem; line-height: 1.7; }
+.rb-dialog-check { display: flex; align-items: center; gap: .4rem; margin: .8rem 0 0; font-size: .86rem; }
+.rb-dialog-actions { display: flex; justify-content: flex-end; gap: .6rem; margin-top: 1rem; }
 #rb-status.rb-warn { color: var(--warn-rule); }
 
 /* ---------- 左右兩欄 ---------- */
@@ -73,8 +137,10 @@
   background: var(--rb-paper); color: var(--rb-paper-ink);
   border: 1px solid var(--rule); border-radius: 4px;
   box-shadow: 0 2px 14px rgba(0, 0, 0, .08);
-  padding: 15mm 16mm; max-width: 210mm; min-height: 20rem;
-  font-family: var(--sans); font-size: 10.5pt; line-height: 1.6;
+  padding: var(--rb-mv, 15mm) var(--rb-mh, 16mm); max-width: 210mm; min-height: 20rem;
+  font-family: var(--rb-font, var(--sans)); font-size: var(--rb-size, 10.5pt);
+  font-weight: var(--rb-weight, 400); letter-spacing: var(--rb-track, 0);
+  line-height: var(--rb-lh, 1.6);
   /* 中文斷行：標點不落在行首；長網址必要時才斷 */
   line-break: strict; word-break: normal; overflow-wrap: break-word;
 }
@@ -87,14 +153,14 @@
 
 .rb-head { margin-bottom: .9rem; }
 .rb-name {
-  font-family: var(--serif); font-size: 20pt; line-height: 1.3; margin: 0 0 .15rem;
+  font-family: var(--rb-head-font, var(--serif)); font-size: 1.9em; line-height: 1.3; margin: 0 0 .15rem;
   letter-spacing: .04em;
 }
-.rb-contact { color: var(--rb-paper-soft); font-size: 9.5pt; }
+.rb-contact { color: var(--rb-paper-soft); font-size: .9em; }
 
 .rb-sec { margin-top: .75rem; }
 .rb-sec h2 {
-  font-family: var(--serif); font-size: 12pt; color: var(--rb-paper-accent);
+  font-family: var(--rb-head-font, var(--serif)); font-size: 1.14em; color: var(--rb-paper-accent);
   margin: 0 0 .35rem; padding-bottom: .15rem; border-bottom: 1px solid var(--rb-paper-rule);
   letter-spacing: .06em;
 }
@@ -104,7 +170,7 @@
 }
 .rb-role .rb-org { color: var(--rb-paper-soft); }
 .rb-role .rb-org::before { content: "｜"; color: var(--rb-paper-rule); }
-.rb-period { flex: none; color: var(--rb-paper-soft); font-size: 9.5pt; white-space: nowrap; }
+.rb-period { flex: none; color: var(--rb-paper-soft); font-size: .9em; white-space: nowrap; }
 
 /* ---------- 響應式：窄螢幕上下排列 ---------- */
 @media (max-width: 1180px) {
@@ -120,7 +186,8 @@
 /* ---------- 列印：只印預覽區 ---------- */
 @page { size: A4; margin: 15mm 16mm; }
 @media print {
-  .rb-intro, .rb-toolbar, .rb-editor, .rb-preview > h2, .rb-page .foot { display: none !important; }
+  .rb-intro, .rb-toolbar, .rb-notes, .rb-editor, .rb-preview > h2, .rb-dialog,
+  .rb-page .foot { display: none !important; }
   html, body.rb-page { background: #fff; }
   .rb-wrap { max-width: none; margin: 0; padding: 0; }
   .rb-grid { display: block; }

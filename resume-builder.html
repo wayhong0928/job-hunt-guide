@@ -44,24 +44,72 @@
 <div class="rb-intro">
 <p class="crumb"><a href="index.html">首頁</a> ／ 履歷準備</p>
 <h1>履歷範本編輯器</h1>
-<p class="lede">左邊照範例的格式填入你的內容，右邊會即時顯示排好的履歷。完成後按「列印／存成 PDF」，在列印視窗的目的地選「另存為 PDF」。內容怎麼寫，請先看<a href="pages/resume-writing.html">履歷寫作</a>。</p>
+<p class="lede">先挑一份最接近你情況的範例，照格式換成你的內容，右邊會即時顯示排好的履歷。完成後按「列印／存成 PDF」。內容怎麼寫，請先看<a href="pages/resume-writing.html">履歷寫作</a>。</p>
 </div>
 
 <div class="rb-toolbar">
+<label class="rb-select">
+<span>範例</span>
+<select id="rb-template" aria-label="套用範例">
+<option value="">換一份範例…</option>
+<option value="engineer">在職工程師：經歷在前</option>
+<option value="student">學生找實習：學歷在前</option>
+<option value="career">跨領域轉職：專案在前</option>
+</select>
+</label>
 <button type="button" class="rb-btn rb-btn-primary" id="rb-print">
 <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
 列印／存成 PDF</button>
+<button type="button" class="rb-btn" id="rb-download">
+<svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+下載 .md 備份</button>
+<input type="file" id="rb-file" class="rb-sr" accept=".md,.markdown,.txt,text/markdown,text/plain">
+<label class="rb-btn" for="rb-file">
+<svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+開啟 .md 檔</label>
 <button type="button" class="rb-btn" id="rb-reset">
 <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 3v6h6"/></svg>
 清除並還原範例</button>
+</div>
+
+<div class="rb-notes">
 <p class="rb-privacy">
 <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-內容只存在你的瀏覽器，不會上傳。<span id="rb-status" role="status"></span></p>
+內容只暫存在這個瀏覽器，不會上傳。無痕視窗、清除瀏覽資料或換一台電腦都會看不到，重要的版本請按「下載 .md 備份」存一份。<span id="rb-status" role="status"></span></p>
+<p class="rb-printtip"><strong>存成 PDF 前：</strong>在列印視窗把目的地選「另存為 PDF」，再點「更多設定」（有些版本寫「顯示更多設定」），取消勾選「頁首及頁尾」。這個選項預設是打勾的，不取消的話 PDF 上下會多印出日期、網頁標題、網址和頁碼。Safari 在「顯示詳細資訊」裡取消「列印頁首和頁尾」。</p>
 </div>
 
 <div class="rb-grid">
 <section class="rb-editor" aria-labelledby="rb-editor-title">
 <h2 id="rb-editor-title">編輯</h2>
+
+<details class="rb-panel" open>
+<summary>插入常用內容</summary>
+<p class="rb-chip-label">聯絡方式（加在姓名下一行）</p>
+<div class="rb-chips" id="rb-chips-contact">
+<button type="button" class="rb-chip" data-contact="⟨你的 Email⟩">Email</button>
+<button type="button" class="rb-chip" data-contact="⟨你的手機⟩">手機</button>
+<button type="button" class="rb-chip" data-contact="⟨居住城市⟩">所在地</button>
+<button type="button" class="rb-chip" data-contact="[linkedin.com/in/⟨帳號⟩](https://www.linkedin.com/in/⟨帳號⟩)">LinkedIn</button>
+<button type="button" class="rb-chip" data-contact="[github.com/⟨帳號⟩](https://github.com/⟨帳號⟩)">GitHub</button>
+<button type="button" class="rb-chip" data-contact="[⟨作品集網址⟩](https://⟨作品集網址⟩)">作品集／個人網站</button>
+</div>
+<p class="rb-chip-label">區塊（插在游標所在位置）</p>
+<div class="rb-chips" id="rb-chips-block">
+<button type="button" class="rb-chip" data-block="summary">專業摘要</button>
+<button type="button" class="rb-chip" data-block="work">工作經歷</button>
+<button type="button" class="rb-chip" data-block="intern">實習經歷</button>
+<button type="button" class="rb-chip" data-block="project">專案</button>
+<button type="button" class="rb-chip" data-block="edu">學歷</button>
+<button type="button" class="rb-chip" data-block="skills">技能</button>
+<button type="button" class="rb-chip" data-block="cert">證照</button>
+<button type="button" class="rb-chip" data-block="lang">語言能力</button>
+<button type="button" class="rb-chip" data-block="club">社團與活動</button>
+<button type="button" class="rb-chip" data-block="award">得獎</button>
+</div>
+<p class="rb-hint">插進來的 ⟨ ⟩ 是提示文字，換成你自己的內容就好。</p>
+</details>
+
 <label class="rb-sr" for="rb-input">履歷內容</label>
 <textarea id="rb-input" spellcheck="false" autocomplete="off">
 # 王小明
@@ -92,6 +140,49 @@
 - **AI 應用**：提示設計、檢索增強生成（RAG）、模型評估
 - **工具**：Git、Docker、Linux
 </textarea>
+
+<div class="rb-checkwrap" aria-live="polite">
+<p class="rb-chip-label">內容檢查</p>
+<ul id="rb-checks" class="rb-checks"></ul>
+</div>
+
+<details class="rb-panel" id="rb-settings">
+<summary>版面設定</summary>
+<div class="rb-settings">
+<label for="rb-set-body">內文字體</label>
+<select id="rb-set-body" data-key="body">
+<option value="sans">黑體</option>
+<option value="serif">明體</option>
+<option value="kai">楷體</option>
+<option value="arial">Arial 搭配黑體</option>
+</select>
+<label for="rb-set-head">姓名與標題字體</label>
+<select id="rb-set-head" data-key="head">
+<option value="sans">黑體</option>
+<option value="serif">明體</option>
+<option value="kai">楷體</option>
+<option value="arial">Arial 搭配黑體</option>
+</select>
+<label for="rb-set-size">字級 <output id="rb-out-size"></output></label>
+<input type="range" id="rb-set-size" data-key="size" min="9" max="12" step="0.5">
+<label for="rb-set-weight">內文字重</label>
+<select id="rb-set-weight" data-key="weight">
+<option value="300">細</option>
+<option value="400">標準</option>
+<option value="500">稍粗</option>
+</select>
+<label for="rb-set-track">字距 <output id="rb-out-track"></output></label>
+<input type="range" id="rb-set-track" data-key="track" min="0" max="0.12" step="0.01">
+<label for="rb-set-lh">行距 <output id="rb-out-lh"></output></label>
+<input type="range" id="rb-set-lh" data-key="lh" min="1.3" max="2" step="0.05">
+<label for="rb-set-mv">上下邊界 <output id="rb-out-mv"></output></label>
+<input type="range" id="rb-set-mv" data-key="mv" min="8" max="25" step="1">
+<label for="rb-set-mh">左右邊界 <output id="rb-out-mh"></output></label>
+<input type="range" id="rb-set-mh" data-key="mh" min="8" max="25" step="1">
+</div>
+<p class="rb-hint">字體只用電腦裡已經有的字型，沒有安裝的會自動換成相近的字型。邊界會套用到印出來的 PDF，列印視窗的「邊界」維持「預設」就好。<button type="button" class="rb-linkbtn" id="rb-settings-reset">還原預設版面</button></p>
+</details>
+
 <details class="rb-help" open>
 <summary>支援的語法</summary>
 <table>
@@ -104,7 +195,23 @@
 <tr><td><code>[文字](https://…)</code></td><td>連結，只接受 http、https、mailto</td></tr>
 </tbody>
 </table>
-<p>其他寫法會照原樣顯示成文字。條列的寫法可以參考<a href="pages/resume-writing.html">履歷寫作</a>第二節的句型。</p>
+<p>其他寫法會照原樣顯示成文字。區塊的先後順序就是你寫的順序，想把學歷移到最前面，把整段剪下貼到上面即可。</p>
+</details>
+
+<details class="rb-help">
+<summary>寫履歷的基本提醒</summary>
+<ul class="rb-tips">
+<li>先依職缺調整。把職缺要求逐條列出，對照履歷裡哪一條能證明，缺的就是要補的地方。</li>
+<li>區塊順序看資歷：學生或相關經驗少的人，把學歷、實習、專案放前面（範例二）；已有相關全職經驗的人，工作成果放前面、學歷往後移（範例一）；轉職的人可以把跟新職務相關的專案放在工作經歷前面（範例三）。</li>
+<li>每條成果用動詞開頭，寫做了什麼、怎麼做、結果如何。「負責」「協助」本身說明不了成果。</li>
+<li>數字要說得出資料來源、比較基準和你的貢獻。沒有可信的數字，就寫清楚規模、角色和交付物。</li>
+<li>一頁是學生和新鮮人常見的起點，不是鐵律；內容相關就可以延伸，不要為了塞進一頁刪掉重要成果。</li>
+<li>這個範本是單欄、沒有表格和圖示，ATS 比較容易讀對順序。</li>
+<li>連結文字直接寫出網址（例如 github.com/帳號），拿到紙本的人才看得到要去哪裡找。</li>
+<li>照片、年齡、婚姻等個資要不要放，依投遞的市場和平台慣例決定，沒有通用答案。</li>
+<li>用 AI 草擬或改寫之後，自己再順過一次，把空泛的形容詞和罐頭句改成你會說的話。</li>
+</ul>
+<p>每一點的來源與完整說明見<a href="pages/resume-writing.html">履歷寫作</a>。</p>
 </details>
 </section>
 
@@ -113,6 +220,22 @@
 <div class="rb-paper" id="rb-output" aria-live="polite"></div>
 </section>
 </div>
+
+<dialog class="rb-dialog" id="rb-print-dialog" aria-labelledby="rb-dialog-title">
+<h2 id="rb-dialog-title">存成 PDF 前，先關掉頁首及頁尾</h2>
+<ol>
+<li>目的地選「另存為 PDF」。</li>
+<li>點「更多設定」（有些版本寫「顯示更多設定」）。</li>
+<li>取消勾選「頁首及頁尾」。它預設是打勾的，不取消的話 PDF 上下會多出日期、網頁標題、網址和頁碼。</li>
+<li>「邊界」維持「預設」、「縮放」維持 100%，版面設定裡的邊界才會照著印。</li>
+</ol>
+<p class="rb-hint">Safari：在「顯示詳細資訊」裡取消「列印頁首和頁尾」。PDF 檔名會自動用「姓名_履歷」。</p>
+<label class="rb-dialog-check"><input type="checkbox" id="rb-print-mute"> 這個瀏覽器以後不用再提醒</label>
+<div class="rb-dialog-actions">
+<button type="button" class="rb-btn" id="rb-print-cancel">取消</button>
+<button type="button" class="rb-btn rb-btn-primary" id="rb-print-go">開啟列印視窗</button>
+</div>
+</dialog>
 
 <footer class="foot">
 <p>範例人物、公司與學校都是虛構的通用素材。本站為個人學習筆記彙整，非官方規範，履歷格式請以應徵企業的實際要求為準。</p>
