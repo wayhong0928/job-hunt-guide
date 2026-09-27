@@ -218,7 +218,7 @@
 | Cake — 作品集資源與教學 | <https://www.cake.me/resources/portfolio?locale=zh-TW> |
 | Cake Help — How to Link My Portfolio to Resume?（2026） | <https://help.cake.me/en/articles/11532189-how-to-link-my-portfolio-to-resume-on-cake> |
 | Cake Help — How to Feature Resumes or Portfolios?（2026） | <https://help.cake.me/en/articles/11532155-how-to-feature-resumes-or-portfolios-on-your-profile> |
-| Cake — 【自介範例】吸引人的面試自我介紹怎麼說？3 步驟打造完美自我介紹 | <https://www.cake.me/resources/introduce-yourself-in-an-interview?locale=zh-TW> |
+| Cake — 【自介範例】吸引人的面試自我介紹怎麼說？3 步驟打造完美自我介紹 | <https://www.cake.me/resources/interview-guide/introduce-yourself-in-an-interview?locale=zh-TW> |
 
 ### 4.3 履歷寫作與 ATS：業界媒體與部落格
 
