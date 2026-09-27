@@ -158,7 +158,7 @@
 以下是本站兩份研究筆記（Claude 版、Codex 版）引用過的所有來源，依主題分類並去除重複連結。**這份清單只是入口，不是本站內容的引用依據**，實際查證請自行點開原始連結確認當下版本，平台介面與規則變動頻繁。
 
 !!! note "查證時間"
-    以下連結查證時間為 2026 年 9 月上旬，平台功能、欄位上限與市場慣例可能已經更新，投遞或引用前請自行到原始頁面確認。
+    以下連結查證時間為 2026 年 9 月上旬，平台功能、欄位上限與市場慣例可能已經更新，投遞或引用前請自行到原始頁面確認。[面試準備](interview-prep.md)「自我介紹怎麼設計」與「遇到不會的題目怎麼回答」兩節新增的來源，查證時間為 2026-09-27。
 
 ### 4.1 大學職涯中心與官方履歷指南
 
@@ -174,6 +174,7 @@
 | Yale OCS — Resume Action Verbs | <https://ocs.yale.edu/resume-action-verbs/> |
 | Yale OCS — Resume Formatting and Common Errors | <https://ocs.yale.edu/resources/resume-formatting/> |
 | Yale OCS — Job Offers & Salary Negotiations | <https://ocs.yale.edu/channels/job-offers-salary-negotiations/> |
+| Yale OCS — Tell Me About Yourself | <https://ocs.yale.edu/channels/tell-me-about-yourself/> |
 | University of Illinois (UIUC) — Action Words | <https://www.careercenter.illinois.edu/action-words> |
 | University of Illinois (UIUC) — How to Write a Resume | <https://www.careercenter.illinois.edu/howtoresume> |
 | University of Michigan — Interviewing Resources | <https://careercenter.umich.edu/content/interviewing-resources> |
@@ -207,6 +208,7 @@
 | 104職場力 — 新鮮人履歷技巧（2020） | <https://blog.104.com.tw/2020-new-freshman-resume-template/> |
 | 104職場力 — 談薪水9招實戰技巧 | <https://blog.104.com.tw/salary-talk-guide/> |
 | 104職場力 — 人資教你薪資談判6大重點 | <https://blog.104.com.tw/how-to-negotiate-salary/> |
+| 104職場力 — 面試自我介紹這樣說！秒讓HR記住你 | <https://blog.104.com.tw/three-principles-of-self-introduction/> |
 | Cake Help — How to Create a New Resume? | <https://help.cake.me/en/articles/11532127-how-to-create-a-new-resume> |
 | Cake Help — How to Create a New Resume?（舊版說明，2024） | <https://help.cake.me/en/support/solutions/articles/60000355185-how-to-create-a-new-resume-> |
 | Cake — 人資愛看的履歷表怎麼寫？ | <https://www.cake.me/resources/resume/resume-outline-and-samples?locale=zh-TW> |
@@ -216,6 +218,7 @@
 | Cake — 作品集資源與教學 | <https://www.cake.me/resources/portfolio?locale=zh-TW> |
 | Cake Help — How to Link My Portfolio to Resume?（2026） | <https://help.cake.me/en/articles/11532189-how-to-link-my-portfolio-to-resume-on-cake> |
 | Cake Help — How to Feature Resumes or Portfolios?（2026） | <https://help.cake.me/en/articles/11532155-how-to-feature-resumes-or-portfolios-on-your-profile> |
+| Cake — 【自介範例】吸引人的面試自我介紹怎麼說？3 步驟打造完美自我介紹 | <https://www.cake.me/resources/introduce-yourself-in-an-interview?locale=zh-TW> |
 
 ### 4.3 履歷寫作與 ATS：業界媒體與部落格
 
@@ -252,6 +255,10 @@
 | Indeed — How To Use the STAR Interview Response Technique | <https://www.indeed.com/career-advice/interviewing/how-to-use-the-star-interview-response-technique> |
 | The Interview Guys — The STAR Method: Complete Guide 2026 | <https://blog.theinterviewguys.com/the-star-method/> |
 | The Muse — 30+ Behavioral Interview Questions | <https://www.themuse.com/advice/behavioral-interview-questions-answers-examples> |
+| Indeed — Interview Question: "Tell Me About Yourself" (With Answers) | <https://www.indeed.com/career-advice/interviewing/interview-question-tell-me-about-yourself> |
+| Indeed — How To Answer an Interview Question You Don't Know in 10 Steps | <https://www.indeed.com/career-advice/interviewing/how-to-answer-question-you-dont-know> |
+| The Muse — 4 Ways to Handle Interview Questions You Don't Know How to Answer | <https://www.themuse.com/advice/4-ways-to-handle-interview-questions-you-dont-know-how-to-answer> |
+| Indeed — How To Ask for Help at Work | <https://www.indeed.com/career-advice/career-development/how-to-ask-for-help-at-work> |
 | Ophy AI — Technical Interview Prep 8-Week Plan 2026 | <https://ophyai.com/blog/interview-tips/technical-interview-prep-software-engineers> |
 | CareerLift AI — How to Prepare for a Software Engineer Interview in 2026 | <https://careerlift.ai/blog/how-to-prepare-software-engineer-interview-2026> |
 | Medium (Javarevisited) — Top 8 Resources to Crack System Design and Coding Interviews 2026 | <https://medium.com/javarevisited/top-8-resources-to-crack-the-system-design-and-coding-interviews-in-2026-51d32eac6c07> |
