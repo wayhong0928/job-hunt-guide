@@ -169,11 +169,10 @@
 | Harvard College — Guide to Creating a Strong Resume | <https://careerservices.fas.harvard.edu/resources/create-a-strong-resume/> |
 | Harvard Extension School — Create Impactful Resumes and Cover Letters | <https://careerservices.fas.harvard.edu/resources/hes-create-impactful-resumes-and-cover-letters/> |
 | Harvard — Resume Bullet Points（PDF，2024） | <https://cdn-careerservices.fas.harvard.edu/wp-content/uploads/sites/161/2024/07/resume-bullets.pdf> |
-| Harvard Extension School — Resumes & Cover Letters（PDF，2024） | <https://cdn-careerservices.fas.harvard.edu/wp-content/uploads/sites/161/2024/10/2024-HES_resume-and-letter.pdf> |
+| Harvard Extension School — Resume Samples（PDF，2026） | <https://cdn-careerservices.fas.harvard.edu/wp-content/uploads/sites/161/2026/02/HES-Resume-samples-combined.pdf> |
 | Yale OCS — Writing Impactful Resume Bullets | <https://ocs.yale.edu/resources/writing-impactful-resume-bullets/> |
 | Yale OCS — Resume Action Verbs | <https://ocs.yale.edu/resume-action-verbs/> |
-| Yale OCS — Resume Formatting and Common Errors | <https://ocs.yale.edu/resources/resume-formatting/> |
-| Yale OCS — Job Offers & Salary Negotiations | <https://ocs.yale.edu/channels/job-offers-salary-negotiations/> |
+| Yale OCS — Job Offers & Salary Negotiations | <https://ocs.yale.edu/job-offers-and-salary-negotiations/> |
 | Yale OCS — Tell Me About Yourself | <https://ocs.yale.edu/channels/tell-me-about-yourself/> |
 | University of Illinois (UIUC) — Action Words | <https://www.careercenter.illinois.edu/action-words> |
 | University of Illinois (UIUC) — How to Write a Resume | <https://www.careercenter.illinois.edu/howtoresume> |
@@ -210,7 +209,6 @@
 | 104職場力 — 人資教你薪資談判6大重點 | <https://blog.104.com.tw/how-to-negotiate-salary/> |
 | 104職場力 — 面試自我介紹這樣說！秒讓HR記住你 | <https://blog.104.com.tw/three-principles-of-self-introduction/> |
 | Cake Help — How to Create a New Resume? | <https://help.cake.me/en/articles/11532127-how-to-create-a-new-resume> |
-| Cake Help — How to Create a New Resume?（舊版說明，2024） | <https://help.cake.me/en/support/solutions/articles/60000355185-how-to-create-a-new-resume-> |
 | Cake — 人資愛看的履歷表怎麼寫？ | <https://www.cake.me/resources/resume/resume-outline-and-samples?locale=zh-TW> |
 | Cake — 英文履歷 5 大技巧 | <https://www.cake.me/resources/6-paragraphs-of-a-perfect-english-resume?locale=en> |
 | Cake — 怎麼無痛轉職 | <https://www.cake.me/resources/changing-career-path-resume-interview-and-salary> |

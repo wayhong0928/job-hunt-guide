@@ -286,9 +286,11 @@ def build():
         body = re.sub(r'href="(?!https?:|#|\.\./)([A-Za-z0-9\-_]+)\.md(#[^"]*)?"',
                       lambda m: 'href="%s.html%s"' % (m.group(1), m.group(2) or ""), body)
         body = f"<h1>{title}</h1>\n<p class='lede'>{desc}</p>\n" + body
-        # 讓 - [ ] 變成可勾選
-        body = body.replace("<li>[ ] ", '<li class="chk"><input type="checkbox"> ')
-        body = body.replace("<li>[x] ", '<li class="chk"><input type="checkbox" checked> ')
+        # 讓 - [ ] 變成可勾選；文字包進 <label>，螢幕報讀器才念得出題目（巢狀清單留在 label 外）
+        body = re.sub(r"<li>\[( |x)\] (.*?)(?=</li>|<ul>|<ol>)",
+                      lambda m: '<li class="chk"><label><input type="checkbox"%s> %s</label>'
+                      % (" checked" if m.group(1) == "x" else "", m.group(2)),
+                      body, flags=re.S)
         prev_ = FLAT[i - 1] if i > 0 else None
         next_ = FLAT[i + 1] if i < len(FLAT) - 1 else None
         pager = ""
