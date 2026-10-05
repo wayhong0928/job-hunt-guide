@@ -299,7 +299,7 @@
 | NIST — Getting Started with the NICE Framework（更新 2025-07-08） | <https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/getting-started> |
 | NIST — Workplace Skills and the NICE Framework（2024-05-16） | <https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/resources/workplace-skills-and-nice> |
 | NIST — Identifying Proficiency within the NICE Framework | <https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/identifying-proficiency-nice-framework> |
-| Google Cloud — MLOps: Continuous delivery and automation pipelines in machine learning | <https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning> |
+| Google Cloud — MLOps: Continuous delivery and automation pipelines in machine learning | <https://docs.cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning> |
 | NIST — AI Risk Management Framework（AI RMF 1.0，2023） | <https://www.nist.gov/itl/ai-risk-management-framework> |
 
 !!! warning "引用前請自行查證"

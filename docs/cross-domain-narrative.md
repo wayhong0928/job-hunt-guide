@@ -73,7 +73,7 @@
 
 以下是方法示範，不代表所有人都具備相同經驗，也不表示軟體開發年資可以直接等同 AI 工程年資。
 
-一位有軟體開發經驗的求職者，可以把經驗映射為：寫得出可維護、有測試的程式；熟悉 API 串接與部署流程；處理過上線後的錯誤與效能問題。這些都連得到 AI 工程裡把模型接進產品的工作，例如資料管線、模型服務、監控與版本管理。Google Cloud 的 MLOps 文件引用〈Hidden Technical Debt in Machine Learning Systems〉的圖說明，實際運作的機器學習系統裡，模型程式碼只占一小部分，其餘是資料蒐集與驗證、服務架構、監控等周邊元素。[Google Cloud：MLOps](https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning) 就求職敘事來說，這些周邊工作正好用得上軟體工程經驗。
+一位有軟體開發經驗的求職者，可以把經驗映射為：寫得出可維護、有測試的程式；熟悉 API 串接與部署流程；處理過上線後的錯誤與效能問題。這些都連得到 AI 工程裡把模型接進產品的工作，例如資料管線、模型服務、監控與版本管理。Google Cloud 的 MLOps 文件引用〈Hidden Technical Debt in Machine Learning Systems〉的圖說明，實際運作的機器學習系統裡，模型程式碼只占一小部分，其餘是資料蒐集與驗證、服務架構、監控等周邊元素。[Google Cloud：MLOps](https://docs.cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning) 就求職敘事來說，這些周邊工作正好用得上軟體工程經驗。
 
 但敘事仍要保留缺口，例如：還沒有從頭訓練或微調過模型、沒有在正式環境負責模型評估與監控，或正在累積資料品質與評估方法的經驗。NIST 的 AI 風險管理框架（AI RMF）可以當作參考，了解 AI 系統在設計、開發、使用與評估時要顧及哪些可信度問題，但讀過框架不能證明已經具備實務能力。[NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework)
 
