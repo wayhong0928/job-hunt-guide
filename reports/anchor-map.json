@@ -210,8 +210,13 @@
   },
   {
    "old": "21-headline",
-   "new": "21-headline全平台權重最高的欄位",
-   "heading": "2.1 Headline：全平台權重最高的欄位"
+   "new": "21-headline別人最先讀到的一句話",
+   "heading": "2.1 Headline：別人最先讀到的一句話"
+  },
+  {
+   "old": "21-headline全平台權重最高的欄位",
+   "new": "21-headline別人最先讀到的一句話",
+   "heading": "2.1 Headline：別人最先讀到的一句話"
   },
   {
    "old": "22-about",
