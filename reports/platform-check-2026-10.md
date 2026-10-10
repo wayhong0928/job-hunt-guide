@@ -35,10 +35,10 @@
 | N3 | platforms.md 2.2 | 「但只有前 200 到 300 字元會在『顯示更多』被點開前露出」 | 查無 | LinkedIn Help a553140、a554351；Talent Blog「14 Profile Summary Examples」 | 官方只寫了 About 的上限（“2,600 characters max”），找不到收合前顯示幾個字元。實際顯示多少也會因裝置與版面而不同 |
 | N4 | platforms.md 2.2 | 「招募者初次瀏覽個人檔案的時間很短，Headline、大頭照、About 三者是優先優化的順序。」 | 查無 | 同 N1、N3 | 官方頁面找不到招募者瀏覽時間的數據，也找不到這三個欄位的優先順序。官方只有 “Members with a profile photo on LinkedIn receive up to 2X more profile views.” |
 | U1 | platforms.md 3.2 | 「……這只是舊版建議，並非現行系統的硬性字數限制」 | 無法判定 | 104 常見問題「履歷刊登／修改」（/faq/resume）、「主動應徵」（/faq/apply）、「履歷開關／隱私設定」（/faq/resume-privacy） | 常見問題沒有提到自傳欄位的字數上限。要確認系統實際上限只能進履歷編輯頁，必須登入，依規定不嘗試登入。（前半句「過去有平台文章建議新鮮人自傳約八百到一千字、分三段」則確認仍正確，見 F25。） |
-| U2 | interview-prep.md 二 | 「Indeed 的面試準備指南指出，面試官問這題不是要你把履歷再念一次，而是想藉此初步判斷你的資格是否切合這個職缺……」 | 無法判定 | indeed.com/career-advice/interviewing/interview-question-tell-me-about-yourself | 不管用 curl、WebFetch 還是一般瀏覽器，indeed.com 對本查核環境都回 HTTP 403，讀不到原文。這不是登入牆，是對方拒絕連線 |
-| U3 | interview-prep.md 四 | 「Indeed 提到，面試官出這類題目，常是想看你在不熟悉的狀況下能不能想辦法解決問題」 | 無法判定 | indeed.com/career-advice/interviewing/how-to-answer-question-you-dont-know | 同 U2，HTTP 403 |
-| U4 | interview-prep.md 四 | 「Indeed 對職場求助時機的建議是，先自己試過、列出已經嘗試的解法，再去找對的人，並讓對方知道這件事的急迫程度」 | 無法判定 | indeed.com/career-advice/career-development/how-to-ask-for-help-at-work | 同 U2，HTTP 403 |
-| U5 | interview-prep.md 五 | 「迴避直接報數字時可以說『期望待遇不低於某個數字』或『跟我資歷相近的人大概能拿多少』……也不要謊報前公司薪水，因為許多公司核薪會要求提供薪資證明」 | 無法判定 | 104職場力「談薪水 9 招」（blog.104.com.tw/salary-talk-guide/）、「人資教你薪資談判 6 大重點」（blog.104.com.tw/how-to-negotiate-salary/）；Yourator「期望薪資怎麼回答」（yourator.co/articles/269） | 兩篇 104 文章裡找不到這三種說法（同一段的「先做功課了解市場平均薪資」「避免說依公司規定」「最後再談薪資」都找得到，見 F42）。原句寫的是「104 等平台」，另一個來源 Yourator 停在安全驗證頁，讀不到內容，所以沒辦法確認這幾句出自哪個平台 |
+| U2 | interview-prep.md 三 | 「Indeed 的面試準備指南指出，面試官問這題不是要你把履歷再念一次，而是想藉此初步判斷你的資格是否切合這個職缺……」 | 無法判定 | indeed.com/career-advice/interviewing/interview-question-tell-me-about-yourself | 不管用 curl、WebFetch 還是一般瀏覽器，indeed.com 對本查核環境都回 HTTP 403，讀不到原文。這不是登入牆，是對方拒絕連線 |
+| U3 | interview-prep.md 六 | 「Indeed 提到，面試官出這類題目，常是想看你在不熟悉的狀況下能不能想辦法解決問題」 | 無法判定 | indeed.com/career-advice/interviewing/how-to-answer-question-you-dont-know | 同 U2，HTTP 403 |
+| U4 | interview-prep.md 六 | 「Indeed 對職場求助時機的建議是，先自己試過、列出已經嘗試的解法，再去找對的人，並讓對方知道這件事的急迫程度」 | 無法判定 | indeed.com/career-advice/career-development/how-to-ask-for-help-at-work | 同 U2，HTTP 403 |
+| U5 | interview-prep.md 七 | 「迴避直接報數字時可以說『期望待遇不低於某個數字』或『跟我資歷相近的人大概能拿多少』……也不要謊報前公司薪水，因為許多公司核薪會要求提供薪資證明」 | 無法判定 | 104職場力「談薪水 9 招」（blog.104.com.tw/salary-talk-guide/）、「人資教你薪資談判 6 大重點」（blog.104.com.tw/how-to-negotiate-salary/）；Yourator「期望薪資怎麼回答」（yourator.co/articles/269） | 兩篇 104 文章裡找不到這三種說法（同一段的「先做功課了解市場平均薪資」「避免說依公司規定」「最後再談薪資」都找得到，見 F42）。原句寫的是「104 等平台」，另一個來源 Yourator 停在安全驗證頁，讀不到內容，所以沒辦法確認這幾句出自哪個平台 |
 
 ## 仍正確（逐條依據）
 
@@ -82,12 +82,12 @@
 | F34 | platforms.md 四 | Cake AI 履歷健檢分析格式、關鍵字、可讀性，跟職缺比對並給分 | 頁面標題「Cake AI 履歷健檢：掌握履歷評分，搭配 AI 優化您的履歷！」；功能區塊標題「格式」「關鍵字」「可讀性」；「Cake AI 將您的履歷與職缺描述進行比對後，條列出清晰的修改建議」 | <https://www.cake.me/ai-resume-checker?locale=zh-TW> |
 | F35 | platforms.md 四 | 查無官方保證健檢必然能通過所有企業的 ATS | 官方頁面只寫「不只幫助您通過應徵者追蹤系統（ATS）篩選」「提升您實際獲得面試的機會」，是協助性質的說法，找不到保證通過所有 ATS 的字句；說明中心 “Explanations on Resume Styles and Suggestions” 也只說 “provides suggestions … for your reference” | 同 F34；<https://help.cake.me/en/articles/11957595-explanations-on-resume-styles-and-suggestions-in-cake-ai-s-ats-resume-checker> |
 | F36 | resume-writing.md 五 | 104 等台灣平台可能提供照片欄位 | 「2.個人照（面試機會差3倍）」 | <https://blog.104.com.tw/104-resume-conferences/> |
-| F37 | interview-prep.md 二 | 104職場力一分鐘版分成三段：個人資訊、重要經歷與優勢能力、表達願景 | 「一分鐘自我介紹的內容 1 總括自己的個人資訊 … 2 個人重要經歷、業績＋重要優勢能力（與職位相關的） … 3 表達願景」 | <https://blog.104.com.tw/three-principles-of-self-introduction/> |
-| F38 | interview-prep.md 二 | 三分鐘版再細分成五段 | 「三分鐘自我介紹的內容 1 總括自己的個人資訊 … 5 表達願景」 | 同 F37 |
-| F39 | interview-prep.md 二 | Cake 給的是個人資訊、應徵優勢、職涯展望三步驟 | 「會先根據個人資訊、應徵優勢、職涯展望等 3 步驟，先建立自我介紹內容架構」 | <https://www.cake.me/resources/interview-guide/introduce-yourself-in-an-interview?locale=zh-TW> |
-| F40 | interview-prep.md 二 | Cake 建議先讀 JD 抓關鍵字，找出職缺看重的特質再對照自己 | 「研究過 JD 後抓出職缺關鍵字，找出該職缺注重的特質並對照自身性格」 | 同 F39 |
-| F41 | interview-prep.md 二 | Cake 列出家庭背景、政治、信仰不適合在自我介紹裡提 | 「像是家庭背景、政治、信仰等議題，都不適合在面試的自我介紹中提及」 | 同 F39 |
-| F42 | interview-prep.md 五 | 104 實務文章建議先了解市場平均薪資、避免說「依公司規定」、最後再談薪資 | 「做足事前功課，掌握市場平均薪資行情狀況」「只敢說『依公司規定』，最後總是『依規定低薪』？」「先聊自己能為公司創造的價值，最後再談薪水」 | <https://blog.104.com.tw/salary-talk-guide/> |
+| F37 | interview-prep.md 三 | 104職場力一分鐘版分成三段：個人資訊、重要經歷與優勢能力、表達願景 | 「一分鐘自我介紹的內容 1 總括自己的個人資訊 … 2 個人重要經歷、業績＋重要優勢能力（與職位相關的） … 3 表達願景」 | <https://blog.104.com.tw/three-principles-of-self-introduction/> |
+| F38 | interview-prep.md 三 | 三分鐘版再細分成五段 | 「三分鐘自我介紹的內容 1 總括自己的個人資訊 … 5 表達願景」 | 同 F37 |
+| F39 | interview-prep.md 三 | Cake 給的是個人資訊、應徵優勢、職涯展望三步驟 | 「會先根據個人資訊、應徵優勢、職涯展望等 3 步驟，先建立自我介紹內容架構」 | <https://www.cake.me/resources/interview-guide/introduce-yourself-in-an-interview?locale=zh-TW> |
+| F40 | interview-prep.md 三 | Cake 建議先讀 JD 抓關鍵字，找出職缺看重的特質再對照自己 | 「研究過 JD 後抓出職缺關鍵字，找出該職缺注重的特質並對照自身性格」 | 同 F39 |
+| F41 | interview-prep.md 三 | Cake 列出家庭背景、政治、信仰不適合在自我介紹裡提 | 「像是家庭背景、政治、信仰等議題，都不適合在面試的自我介紹中提及」 | 同 F39 |
+| F42 | interview-prep.md 七 | 104 實務文章建議先了解市場平均薪資、避免說「依公司規定」、最後再談薪資 | 「做足事前功課，掌握市場平均薪資行情狀況」「只敢說『依公司規定』，最後總是『依規定低薪』？」「先聊自己能為公司創造的價值，最後再談薪水」 | <https://blog.104.com.tw/salary-talk-guide/> |
 
 
 ## 沒有納入查核的內容
